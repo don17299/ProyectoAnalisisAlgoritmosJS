@@ -4,16 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto de Analisis</title>
-    <!-- CSS only -->
-    
-    <link rel="stylesheet" href="css/header.css">
+    <title>Inicio de Sesión</title>
+    <!--styles-->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--Bootstrap-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!--alerts-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
+
+<!------ Include the above in your HEAD tag ---------->
+
 <body>
+    <div id="login">
+        <h3 class="text-center text-black pt-4">Fomulario de inicio</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" action="" method="post">
+                            <h3 class="text-center text-info">Ingresa tu nombre</h3>
+                            <div class="form-group">
+                                <label for="username" class="text-info">Nombre de Usuario:</label><br>
+                                <input type="text" name="username" id="username" class="form-control">
+                            </div>  
+                        </form>
+                        <div class="container-fluid h-100"> 
+                            <div class="row w-100 align-items-center">
+                                <div class="col text-center">
+                                    <button id="start" class="btn btn-primary regular-button"> Empezar </button>
+                                </div>	
+                            </div>
+                    
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <header>
-        <iframe src="header.html"></iframe>
-    </header>
-
+    <footer class="text-center">
+        Test de pensamiento lógico<br>
+        Programado por: <br>Carlos Mario Duque Mejía<br>
+        Claudia Patricia Ordoñez Enriquez<br>
+        Sebastian Lugo Mateus
+     </footer>
+    
+    <script src="./scripts/index.js", type="module"></script>
 </body>
+
 </html>
