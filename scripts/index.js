@@ -1,5 +1,3 @@
-import * as storage from "./storage.js"
-
 document.getElementById("start").onclick=function (){
 
     let username = document.getElementById('username').value
@@ -13,7 +11,8 @@ document.getElementById("start").onclick=function (){
                 confirmButtonText: 'Cool'
             });
          }else{
-             storage.crear("username",username)
+
+            sessionStorage.setItem("username",username)
             location.href="exercises.html"
          }
 }

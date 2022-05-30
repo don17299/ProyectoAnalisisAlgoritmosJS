@@ -33,6 +33,7 @@ body{
 
 .tablero * :hover{
     font-weight: 600;
+    float: left;
 }
 
 .grass1{
@@ -43,4 +44,26 @@ body{
 }
 .grass3{
     background-image: url("/images/cesped\ -\ 3.jpg");
+}
+.link{
+  padding:13px;
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  background:url("/images/link.jpg");
+  background-size: cover;
+}
+.chest{
+    background-image: url("/images/cofre.png");
+}
+.wall{
+    background-image: url("/images/muro.jpg");
+}
+.error{
+    width: 80px;
+    height: 80px;
+    background: url("/images/error.png");
+}
+
+.centro-control{
+    float: right;
 }
