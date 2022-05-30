@@ -67,7 +67,9 @@ function fill_matrix_another_time() {
             board.removeChild(board.children[0]);
             i++
         }
-        let ejercicio = [[0, 0, 2, 0, 2, 0],
+
+        let ejercicio = 
+        [[0, 0, 2, 0, 2, 0],
         [0, 0, 2, 1, 2, 0],
         [0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0],
@@ -84,12 +86,13 @@ function fill_matrix_another_time() {
                 board.removeChild(board.children[0]);
                 i++
             }
-            let ejercicio = [[0, 0, 2, 0, 2, 0],
-            [0, 0, 2, 1, 2, 0],
+            let ejercicio = 
+            [[0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 3, 0, 0],
             [0, 0, 0, 0, 0, 0],
-            [0, 0, 2, 0, 0, 2],
-            [0, 0, 2, 0, 0, 3]];
+            [0, 0, 0, 0, 0, 2],
+            [0, 0, 0, 0, 0, 1]];
 
             fill_matrix(ejercicio)
         } else {
@@ -101,12 +104,13 @@ function fill_matrix_another_time() {
                     board.removeChild(board.children[0]);
                     i++
                 }
-                let ejercicio = [[0, 0, 2, 0, 2, 0],
-                [0, 0, 2, 1, 2, 0],
-                [0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0],
-                [0, 0, 2, 0, 0, 2],
-                [0, 0, 2, 0, 0, 3]];
+                let ejercicio = 
+                [[2, 0, 0, 0, 0, 2],
+                [2, 0, 2, 2, 0, 2],
+                [2, 0, 2, 2, 0, 2],
+                [2, 0, 2, 2, 0, 2],
+                [2, 0, 2, 2, 0, 2],
+                [2, 1, 2, 2, 3, 2]];
 
                 fill_matrix(ejercicio)
             } else {
@@ -118,12 +122,13 @@ function fill_matrix_another_time() {
                         board.removeChild(board.children[0]);
                         i++
                     }
-                    let ejercicio = [[0, 0, 2, 0, 2, 0],
-                    [0, 0, 2, 1, 2, 0],
+                    let ejercicio = 
+                    [[0, 0, 2, 0, 0, 0],
+                    [0, 0, 0, 2, 0, 0],
+                    [0, 0, 3, 2, 0, 0],
+                    [0, 2, 2, 1, 0, 0],
                     [0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0],
-                    [0, 0, 2, 0, 0, 2],
-                    [0, 0, 2, 0, 0, 3]];
+                    [0, 0, 0, 0, 0, 0]];
 
                     fill_matrix(ejercicio)
                 }
@@ -347,7 +352,7 @@ document.getElementById("answer").onclick = function (e) {
         num_ejercicio++
         myself.textContent = "Siguiente"
     } else {
-        if (num_ejercicio != 5) {
+        if (num_ejercicio <= 5) {
             const movements = document.getElementById("move_set")
             let tam = movements.children.length
             let i = 0
