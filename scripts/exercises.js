@@ -350,7 +350,11 @@ document.getElementById("answer").onclick = function (e) {
             sessionStorage.setItem("exercise" + num_ejercicio, "false")
         }
         num_ejercicio++
+        if(num_ejercicio<=5){
         myself.textContent = "Siguiente"
+        }else{
+        myself.textContent = "Continuar"
+        }
     } else {
         if (num_ejercicio <= 5) {
             const movements = document.getElementById("move_set")
