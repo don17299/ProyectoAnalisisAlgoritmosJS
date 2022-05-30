@@ -64,6 +64,17 @@ body{
     background: url("/images/error.png");
 }
 
-.centro-control{
-    float: right;
+div{
+    float: left;
+}
+
+#up,#left,#right,#down{
+    width: 60px;
+    height: auto;
+    border-radius: 20px;
+}
+
+#answer {
+    position: absolute;
+    bottom: 5;
 }
