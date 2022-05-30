@@ -8,7 +8,7 @@ document.getElementById("start").onclick=function (){
                 title: 'Error!',
                 text: 'Ingresa un nombre de usuario',
                 icon: 'error',
-                confirmButtonText: 'Cool'
+                confirmButtonText: 'Ok'
             });
          }else{
 

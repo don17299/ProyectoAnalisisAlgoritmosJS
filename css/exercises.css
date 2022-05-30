@@ -24,10 +24,7 @@ body{
 }
 
 .tablero *{
-    text-align: center;
-    font-size: 40px;
     transition:  0.2s ease-in-out;
-    user-select: none;
     border: black thin solid;
 }
 
@@ -37,31 +34,79 @@ body{
 }
 
 .grass1{
-    background-image: url("/images/cesped\ -\ 1.jpg");
+    padding:13px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background:url("../images/cesped-1.jpg");
+    background-size: cover; 
 }
 .grass2{
-    background-image: url("/images/cesped\ -\ 2.jpg");
+    padding:13px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background:url("../images/cesped-2.jpg");
+    background-size: cover;
 }
 .grass3{
-    background-image: url("/images/cesped\ -\ 3.jpg");
+    padding:13px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background:url("../images/cesped-3.jpg");
+    background-size: cover; 
 }
 .link{
-  padding:13px;
-  background-size: 100% 100%;
-  background-repeat:no-repeat;
-  background:url("/images/link.jpg");
-  background-size: cover;
+    padding:13px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background:url("../images/link.jpg");
+    background-size: cover;
 }
 .chest{
-    background-image: url("/images/cofre.png");
+    padding:13px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background:url("../images/cofre.jpg");
+    background-size: cover;
 }
 .wall{
-    background-image: url("/images/muro.jpg");
+    padding:13px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background:url("../images/muro.jpg");
+    background-size: cover;
 }
 .error{
     width: 80px;
     height: 80px;
-    background: url("/images/error.png");
+    background: url("../images/error.png");
+}
+.arrowUp{
+    padding:13px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background:url("../images/camino-up.jpg");
+    background-size: cover; 
+}
+.arrowLeft{ 
+    padding:13px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background:url("../images/camino-left.jpg");
+    background-size: cover; 
+}
+.arrowRight{
+    padding:13px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background:url("../images/camino-right.jpg");
+    background-size: cover; 
+}
+.arrowDown{
+    padding:13px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background:url("../images/camino-down.jpg");
+    background-size: cover; 
 }
 
 div{
@@ -77,4 +122,11 @@ div{
 #answer {
     position: absolute;
     bottom: 5;
+}
+
+p{
+    font-family: "Myriad Pro", "sans-serif";
+    font-size: 30pt;
+    color: white;
+    float: left;
 }
