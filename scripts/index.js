@@ -1,3 +1,10 @@
+/**
+ * Hecho por:
+ *  Carlos Mario Duque Mejia
+ *  Claudia Patricia Ordoñez
+ *  Sebastian Lugo Mateus
+ */
+
 document.getElementById("start").onclick=function (){
 
     let username = document.getElementById('username').value

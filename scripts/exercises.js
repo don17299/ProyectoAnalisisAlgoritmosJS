@@ -1,4 +1,10 @@
-//Hecho por nosotros.
+/**
+ * Hecho por:
+ *  Carlos Mario Duque Mejia
+ *  Claudia Patricia Ordoñez
+ *  Sebastian Lugo Mateus
+ */
+
 /**
  * 0:cesped
  * 1:link

@@ -1,3 +1,9 @@
+/**
+ * Hecho por:
+ *  Carlos Mario Duque Mejia
+ *  Claudia Patricia Ordoñez
+ *  Sebastian Lugo Mateus
+ */
 
 export class User{
 
