@@ -20,6 +20,7 @@ let ejercicio1 =
     [1, 0, 2, 0, 0, 0]];
 
 let num_ejercicio = 1
+let ejercicios_correctos=0
 
 fill_matrix(ejercicio1)
 
@@ -68,13 +69,13 @@ function fill_matrix_another_time() {
             i++
         }
 
-        let ejercicio = 
-        [[0, 0, 2, 0, 2, 0],
-        [0, 0, 2, 1, 2, 0],
-        [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
-        [0, 0, 2, 0, 0, 2],
-        [0, 0, 2, 0, 0, 3]];
+        let ejercicio =
+            [[0, 0, 2, 0, 2, 0],
+            [0, 0, 2, 1, 2, 0],
+            [0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0],
+            [0, 0, 2, 0, 0, 2],
+            [0, 0, 2, 0, 0, 3]];
 
         fill_matrix(ejercicio)
     } else {
@@ -86,13 +87,13 @@ function fill_matrix_another_time() {
                 board.removeChild(board.children[0]);
                 i++
             }
-            let ejercicio = 
-            [[0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 3, 0, 0],
-            [0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 2],
-            [0, 0, 0, 0, 0, 1]];
+            let ejercicio =
+                [[0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 3, 0, 0],
+                [0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 2],
+                [0, 0, 0, 0, 0, 1]];
 
             fill_matrix(ejercicio)
         } else {
@@ -104,13 +105,13 @@ function fill_matrix_another_time() {
                     board.removeChild(board.children[0]);
                     i++
                 }
-                let ejercicio = 
-                [[2, 0, 0, 0, 0, 2],
-                [2, 0, 2, 2, 0, 2],
-                [2, 0, 2, 2, 0, 2],
-                [2, 0, 2, 2, 0, 2],
-                [2, 0, 2, 2, 0, 2],
-                [2, 1, 2, 2, 3, 2]];
+                let ejercicio =
+                    [[2, 0, 0, 0, 0, 2],
+                    [2, 0, 2, 2, 0, 2],
+                    [2, 0, 2, 2, 0, 2],
+                    [2, 0, 2, 2, 0, 2],
+                    [2, 0, 2, 2, 0, 2],
+                    [2, 1, 2, 2, 3, 2]];
 
                 fill_matrix(ejercicio)
             } else {
@@ -122,13 +123,13 @@ function fill_matrix_another_time() {
                         board.removeChild(board.children[0]);
                         i++
                     }
-                    let ejercicio = 
-                    [[0, 0, 2, 0, 0, 0],
-                    [0, 0, 0, 2, 0, 0],
-                    [0, 0, 3, 2, 0, 0],
-                    [0, 2, 2, 1, 0, 0],
-                    [0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0]];
+                    let ejercicio =
+                        [[0, 0, 2, 0, 0, 0],
+                        [0, 0, 0, 2, 0, 0],
+                        [0, 0, 3, 2, 0, 0],
+                        [0, 2, 2, 1, 0, 0],
+                        [0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0]];
 
                     fill_matrix(ejercicio)
                 }
@@ -215,7 +216,7 @@ async function check_path(path) {
     for (let k = 0; k < path.length && alive === true; k++) {
         if (path[k].textContent === '↑') {
             if ((i - 1) != -1) {
-                if (document.getElementById((i-1) + "" + j).className != "wall") {
+                if (document.getElementById((i - 1) + "" + j).className != "wall") {
                     document.getElementById(i + "" + j).className = "arrowUp"
                     await sleep(800);
                     i--
@@ -236,7 +237,7 @@ async function check_path(path) {
         }
         if (path[k].textContent === '←') {
             if ((j - 1) != -1) {
-                if (document.getElementById(i + "" + (j-1)).className != "wall") {
+                if (document.getElementById(i + "" + (j - 1)).className != "wall") {
                     document.getElementById(i + "" + j).className = "arrowLeft"
                     await sleep(800);
                     j--
@@ -257,8 +258,8 @@ async function check_path(path) {
 
         if (path[k].textContent === '→') {
             if ((j + 1) != 6) {
-                if (document.getElementById(i + "" + (j+1)).className != "wall") {
-                    console.log(i,j)
+                if (document.getElementById(i + "" + (j + 1)).className != "wall") {
+                    console.log(i, j)
                     document.getElementById(i + "" + j).className = "arrowRight"
                     await sleep(800);
                     j++
@@ -279,7 +280,7 @@ async function check_path(path) {
 
         if (path[k].textContent === '↓') {
             if ((i + 1) != 6) {
-                if (document.getElementById((i+1) + "" + j).className != "wall") {
+                if (document.getElementById((i + 1) + "" + j).className != "wall") {
                     document.getElementById(i + "" + j).className = "arrowDown"
                     await sleep(800);
                     i++
@@ -339,21 +340,19 @@ async function check_path(path) {
 
 }
 
-document.getElementById("answer").onclick = function (e) {
+document.getElementById("answer").onclick = function () {
     const myself = document.getElementById("answer")
     if (myself.textContent === "Responder") {
         const movements = document.getElementById("move_set")
         const moves = movements.children
         if (check_path(moves)) {
-            sessionStorage.setItem("exercise" + num_ejercicio, "true")
-        } else {
-            sessionStorage.setItem("exercise" + num_ejercicio, "false")
+            ejercicios_correctos++
         }
         num_ejercicio++
-        if(num_ejercicio<=5){
-        myself.textContent = "Siguiente"
-        }else{
-        myself.textContent = "Continuar"
+        if (num_ejercicio <= 5) {
+            myself.textContent = "Siguiente"
+        } else {
+            myself.textContent = "Continuar"
         }
     } else {
         if (num_ejercicio <= 5) {
@@ -367,7 +366,16 @@ document.getElementById("answer").onclick = function (e) {
             myself.textContent = "Responder"
             fill_matrix_another_time()
         } else {
+            sessionStorage.setItem("num_correct",""+ejercicios_correctos)
             location.href = "exercises.html"
         }
+    }
+}
+
+document.getElementById("back").onclick = function () {
+    const movements = document.getElementById("move_set")
+    if(movements.children.length>0){    
+    let lastChild = movements.lastChild
+    movements.removeChild(lastChild);
     }
 }

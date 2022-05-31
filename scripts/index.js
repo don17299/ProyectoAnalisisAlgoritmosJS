@@ -5,9 +5,22 @@
  *  Sebastian Lugo Mateus
  */
 
+var input = document.getElementById("username");
+
+
+input.addEventListener("keypress", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      document.getElementById("start").click();
+    }
+  });
+
 document.getElementById("start").onclick=function (){
 
-    let username = document.getElementById('username').value
+    let username =input.value
         //exercises = new test.Exercises()
         
         if(username === ''){
