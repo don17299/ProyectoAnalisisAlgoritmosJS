@@ -134,3 +134,9 @@ p{
     color: white;
     float: left;
 }
+
+#move_set{
+    width: 300px;
+    height: 80px;
+    overflow-y: auto;
+}
