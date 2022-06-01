@@ -5,6 +5,16 @@
  *  Sebastian Lugo Mateus
  */
 
+// if(typeof (sessionStorage.getItem("username"))==='undefined'){
+//     Swal.fire({
+//         title: 'Error!',
+//         text: 'Oh no! no te logueaste',
+//         icon: 'info',
+//         confirmButtonText: 'Ok'
+//     });
+//     location.href = "index.html"
+// }
+
 /**
  * 0:cesped
  * 1:link
