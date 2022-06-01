@@ -138,5 +138,7 @@ p{
 #move_set{
     width: 300px;
     height: 80px;
-    overflow-y: auto;
+    display: flex;
+    overflow-x: auto;
+    background-color: #558b2f;
 }
