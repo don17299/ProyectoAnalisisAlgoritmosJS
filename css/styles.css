@@ -1,5 +1,5 @@
 html, body {
-    background-image: url("../images/code-g9d8f302cd_1920.jpg");
+    background-image: url("../images/background.png");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -18,7 +18,7 @@ html, body {
 }
 
 footer {
-    background-color: rgb(101, 116, 131);
+    background-color: transparent;
     position: absolute;
     bottom: 0;
     width: 100%;

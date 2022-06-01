@@ -35,10 +35,9 @@ function fill_matrix(matrix) {
                     let value = matrix[i][j]
                     const board = document.getElementById("board");
                     const element = document.createElement("div");
-                    pasto = (Math.round(Math.random() * (4 - 1) + 1)) === 1 ? "grass1" : (Math.round(Math.random() * (4 - 1) + 1)) === 2 ? "grass2" : "grass3"
 
                     switch (value) {
-                        case 0: element.className = pasto
+                        case 0: element.className = "grass1"
                             element.id = i + "" + j
                             break;
                         case 1: element.className = "link"
