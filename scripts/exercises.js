@@ -370,7 +370,7 @@ document.getElementById("answer").onclick = function () {
             fill_matrix_another_time()
         } else {
             sessionStorage.setItem("num_correct", "" + ejercicios_correctos)
-            location.href = "exercises.html"
+            location.href = "survey.html"
         }
     }
 }
