@@ -1,0 +1,27 @@
+body{
+    background-image: url("../images/link-ww.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 80;
+}
+
+footer {
+    background-color: #4f963c;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    opacity: 0.9;
+}
+label{
+    margin-right: 50px;
+}
+div{
+    width: fit-content;
+    opacity: 0.8;
+    background-color: aliceblue;
+    margin-bottom: 70px;
+    margin-left: auto; 
+    margin-right: 0;
+    
+}
