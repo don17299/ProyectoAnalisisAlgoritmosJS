@@ -5,15 +5,9 @@
  *  Sebastian Lugo Mateus
  */
 
-// if(typeof (sessionStorage.getItem("username"))==='undefined'){
-//     Swal.fire({
-//         title: 'Error!',
-//         text: 'Oh no! no te logueaste',
-//         icon: 'info',
-//         confirmButtonText: 'Ok'
-//     });
-//     location.href = "index.html"
-// }
+if(sessionStorage.getItem("username")===null){
+    location.href="index.html"
+}
 
 /**
  * 0:cesped
@@ -30,7 +24,7 @@ let ejercicio1 =
     [1, 0, 2, 0, 0, 0]];
 
 let num_ejercicio = 1
-let ejercicios_correctos=0
+let ejercicios_correctos = 0
 
 fill_matrix(ejercicio1)
 
@@ -375,16 +369,16 @@ document.getElementById("answer").onclick = function () {
             myself.textContent = "Responder"
             fill_matrix_another_time()
         } else {
-            sessionStorage.setItem("num_correct",""+ejercicios_correctos)
-            location.href = "exercises.html"
+            sessionStorage.setItem("num_correct", "" + ejercicios_correctos)
+            location.href = "survey.html"
         }
     }
 }
 
 document.getElementById("back").onclick = function () {
     const movements = document.getElementById("move_set")
-    if(movements.children.length>0){    
-    let lastChild = movements.lastChild
-    movements.removeChild(lastChild);
+    if (movements.children.length > 0) {
+        let lastChild = movements.lastChild
+        movements.removeChild(lastChild);
     }
 }
