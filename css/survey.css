@@ -1,8 +1,9 @@
 body{
     background-image: url("../images/background-survey.jpg");
     background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-position-y: 80;
+    background-position-y: 20%;
 }
 
 footer {

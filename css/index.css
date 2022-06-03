@@ -1,7 +1,7 @@
 html, body {
     background-image: url("../images/background.png");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: center;
     height: 100%;
 }
@@ -12,17 +12,22 @@ html, body {
     background-color: transparent;
     background-repeat: no-repeat;
     position: absolute;
-    top: 50%; 
+    top: 30%; 
     left: 50%;
     transform: translate(-50%,-50%);
     color: white;
 }
 
 footer {
+    top: auto;
     background-color: transparent;
     position: absolute;
     bottom: 0;
     width: 100%;
     color: white;
     opacity: 0.9;
+}
+
+img{
+    margin: auto;
 }

@@ -6,6 +6,7 @@
  */
 
 var input = document.getElementById("username");
+let personaje
 
 input.addEventListener("keypress", function(event) {
     // If the user presses the "Enter" key on the keyboard
@@ -30,7 +31,12 @@ document.getElementById("start").onclick=function (){
                 confirmButtonText: 'Ok'
             });
          }else{
-
+           if(document.getElementById("link").checked){
+             personaje="link"
+           }else{
+             personaje="zelda"
+           }
+            sessionStorage.setItem("personaje",personaje)
             sessionStorage.setItem("username",username)
             location.href="exercises.html"
          }

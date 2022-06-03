@@ -9,9 +9,11 @@ if(sessionStorage.getItem("username")===null){
     location.href="index.html"
 }
 
+let personaje=sessionStorage.getItem("personaje")
+
 /**
  * 0:cesped
- * 1:link
+ * 1:personaje
  * 2:muro
  * 3:cofre
  */
@@ -44,7 +46,7 @@ function fill_matrix(matrix) {
                         case 0: element.className = "grass1"
                             element.id = i + "" + j
                             break;
-                        case 1: element.className = "link"
+                        case 1: element.className = personaje
                             element.id = i + "" + j
                             break;
                         case 2: element.className = "wall"
@@ -208,7 +210,7 @@ function sleep(ms) {
  * @returns 
  */
 async function check_path(path) {
-    const link = document.getElementsByClassName("link")
+    const link = document.getElementsByClassName(personaje)
     let id = link[0].id
     let i = Number(id.charAt(0))
     let j = Number(id.charAt(1))
@@ -224,7 +226,7 @@ async function check_path(path) {
                     await sleep(800);
                     i--
                     endPos = document.getElementById(i + "" + j).className
-                    document.getElementById(i + "" + j).className = "link"
+                    document.getElementById(i + "" + j).className = personaje
                     await sleep(800);
                 } else {
                     alive = false
@@ -245,7 +247,7 @@ async function check_path(path) {
                     await sleep(800);
                     j--
                     endPos = document.getElementById(i + "" + j).className
-                    document.getElementById(i + "" + j).className = "link"
+                    document.getElementById(i + "" + j).className = personaje
                     await sleep(800);
                 } else {
                     alive = false
@@ -267,7 +269,7 @@ async function check_path(path) {
                     await sleep(800);
                     j++
                     endPos = document.getElementById(i + "" + j).className
-                    document.getElementById(i + "" + j).className = "link"
+                    document.getElementById(i + "" + j).className = personaje
                     await sleep(800);
                 } else {
                     alive = false
@@ -288,7 +290,7 @@ async function check_path(path) {
                     await sleep(800);
                     i++
                     endPos = document.getElementById(i + "" + j).className
-                    document.getElementById(i + "" + j).className = "link"
+                    document.getElementById(i + "" + j).className = personaje
                     await sleep(800);
                 } else {
                     alive = false
