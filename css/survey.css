@@ -1,9 +1,9 @@
 body{
     background-image: url("../images/background-survey.jpg");
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
-    background-position-y: 20%;
+    background-position-y: 0%;
 }
 
 footer {
@@ -24,5 +24,5 @@ div{
     margin-bottom: 70px;
     margin-left: auto; 
     margin-right: 0;
-    
+    margin-top: 70px;
 }
