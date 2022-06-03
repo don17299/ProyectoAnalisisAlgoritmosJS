@@ -334,7 +334,7 @@ async function check_path(path) {
         } else {
             Swal.fire({
                 title: 'Error!',
-                text: 'Oh no! no conseguiste el cofre',
+                text: 'Oh no! No conseguiste el cofre',
                 icon: 'info',
                 confirmButtonText: 'Ok'
             });
