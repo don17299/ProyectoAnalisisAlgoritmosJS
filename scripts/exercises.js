@@ -223,11 +223,11 @@ async function check_path(path) {
             if ((i - 1) != -1) {
                 if (document.getElementById((i - 1) + "" + j).className != "wall") {
                     document.getElementById(i + "" + j).className = "arrowUp"
-                    await sleep(800);
+                    await sleep(700);
                     i--
                     endPos = document.getElementById(i + "" + j).className
                     document.getElementById(i + "" + j).className = personaje
-                    await sleep(800);
+                    await sleep(700);
                 } else {
                     alive = false
                     crash = true
@@ -244,11 +244,11 @@ async function check_path(path) {
             if ((j - 1) != -1) {
                 if (document.getElementById(i + "" + (j - 1)).className != "wall") {
                     document.getElementById(i + "" + j).className = "arrowLeft"
-                    await sleep(800);
+                    await sleep(700);
                     j--
                     endPos = document.getElementById(i + "" + j).className
                     document.getElementById(i + "" + j).className = personaje
-                    await sleep(800);
+                    await sleep(700);
                 } else {
                     alive = false
                     crash = true
@@ -266,11 +266,11 @@ async function check_path(path) {
                 if (document.getElementById(i + "" + (j + 1)).className != "wall") {
                     console.log(i, j)
                     document.getElementById(i + "" + j).className = "arrowRight"
-                    await sleep(800);
+                    await sleep(700);
                     j++
                     endPos = document.getElementById(i + "" + j).className
                     document.getElementById(i + "" + j).className = personaje
-                    await sleep(800);
+                    await sleep(700);
                 } else {
                     alive = false
                     crash = true
@@ -287,11 +287,11 @@ async function check_path(path) {
             if ((i + 1) != 6) {
                 if (document.getElementById((i + 1) + "" + j).className != "wall") {
                     document.getElementById(i + "" + j).className = "arrowDown"
-                    await sleep(800);
+                    await sleep(700);
                     i++
                     endPos = document.getElementById(i + "" + j).className
                     document.getElementById(i + "" + j).className = personaje
-                    await sleep(800);
+                    await sleep(700);
                 } else {
                     alive = false
                     crash = true
