@@ -1,102 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encuesta de Satisfacción</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encuesta de Satisfacción</title>
 
-    <!--styles-->
-    <link rel="stylesheet" href="./css/survey.css">
+  <!--styles-->
+  <link rel="stylesheet" href="./css/survey.css">
 
-    <!--Bootstrap offline-->
-    <link href="./bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="./bootstrap/bootstrap.min.js"></script>
-    <script src="./bootstrap/jquery.min.js"></script>
+  <!--Bootstrap offline-->
+  <link href="./bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="./bootstrap/bootstrap.min.js"></script>
+  <script src="./bootstrap/jquery.min.js"></script>
 
-    <!--alerts offline-->
-    <script src="./complementos/sweetalert2@11.js"></script>
+  <!--alerts offline-->
+  <script src="./complementos/sweetalert2@11.js"></script>
 
 </head>
+
 <body>
 
-    <div class="form-check">
-        <h3>1. ¿Cómo te sentiste al hacer los ejericicios?</h3>
-        <input class="form-check-input" type="radio" name="radio1" id="radio1">
-        <label class="form-check-label" for="radio1">
-          Muy Mal
-        </label>
-        <input class="form-check-input" type="radio" name="radio1" id="radio2">
-        <label class="form-check-label" for="radio2">
-          Mal
-        </label>
-        <input class="form-check-input" type="radio" name="radio1" id="radio3">
-        <label class="form-check-label" for="radio3">
-          Indiferente
-        </label>
-        <input class="form-check-input" type="radio" name="radio1" id="radio4">
-        <label class="form-check-label" for="radio4">
-          Bien
-        </label>
-        <input class="form-check-input" type="radio" name="radio1" id="radio5">
-        <label class="form-check-label" for="radio5">
-          Muy bien
-        </label>
-      </div>
+  <div class="form-check">
+    <h3>1. ¿Cómo te sentiste al hacer los ejericicios?</h3>
+    <input class="form-check-input" type="radio" name="radio1" id="radio1">
+    <label class="form-check-label" for="radio1">
+      Muy Mal
+    </label>
+    <input class="form-check-input" type="radio" name="radio1" id="radio2">
+    <label class="form-check-label" for="radio2">
+      Mal
+    </label>
+    <input class="form-check-input" type="radio" name="radio1" id="radio3">
+    <label class="form-check-label" for="radio3">
+      Indiferente
+    </label>
+    <input class="form-check-input" type="radio" name="radio1" id="radio4">
+    <label class="form-check-label" for="radio4">
+      Bien
+    </label>
+    <input class="form-check-input" type="radio" name="radio1" id="radio5">
+    <label class="form-check-label" for="radio5">
+      Muy bien
+    </label>
+  </div>
 
-      <div class="form-check">
-        <h3>2. ¿Cómo te sentiste al hacer los ejericicios?</h3>
-        <input class="form-check-input" type="radio" name="radio2" id="radio6">
-        <label class="form-check-label" for="radio6">
-          Muy Mal
-        </label>
-        <input class="form-check-input" type="radio" name="radio2" id="radio7">
-        <label class="form-check-label" for="radio7">
-          Mal
-        </label>
-        <input class="form-check-input" type="radio" name="radio2" id="radio8">
-        <label class="form-check-label" for="radio8">
-          Indiferente
-        </label>
-        <input class="form-check-input" type="radio" name="radio2" id="radio9">
-        <label class="form-check-label" for="radio9">
-          Bien
-        </label>
-        <input class="form-check-input" type="radio" name="radio2" id="radio10">
-        <label class="form-check-label" for="radio10">
-          Muy bien
-        </label>
-      </div>
+  <div class="form-check">
+    <h3>2. ¿Cómo te sentiste al hacer los ejericicios?</h3>
+    <input class="form-check-input" type="radio" name="radio2" id="radio6">
+    <label class="form-check-label" for="radio6">
+      Muy Mal
+    </label>
+    <input class="form-check-input" type="radio" name="radio2" id="radio7">
+    <label class="form-check-label" for="radio7">
+      Mal
+    </label>
+    <input class="form-check-input" type="radio" name="radio2" id="radio8">
+    <label class="form-check-label" for="radio8">
+      Indiferente
+    </label>
+    <input class="form-check-input" type="radio" name="radio2" id="radio9">
+    <label class="form-check-label" for="radio9">
+      Bien
+    </label>
+    <input class="form-check-input" type="radio" name="radio2" id="radio10">
+    <label class="form-check-label" for="radio10">
+      Muy bien
+    </label>
+  </div>
 
-      <div class="form-check">
-        <h3>3. ¿Cómo te sentiste al hacer los ejericicios?</h3>
-        <input class="form-check-input" type="radio" name="radio3" id="radio11">
-        <label class="form-check-label" for="radio11">
-          Muy Mal
-        </label>
-        <input class="form-check-input" type="radio" name="radio3" id="radio12">
-        <label class="form-check-label" for="radio12">
-          Mal
-        </label>
-        <input class="form-check-input" type="radio" name="radio3" id="radio13">
-        <label class="form-check-label" for="radio13">
-          Indiferente
-        </label>
-        <input class="form-check-input" type="radio" name="radio3" id="radio14">
-        <label class="form-check-label" for="radio14">
-          Bien
-        </label>
-        <input class="form-check-input" type="radio" name="radio3" id="radio15">
-        <label class="form-check-label" for="radio15">
-          Muy bien
-        </label>
-      </div>
-    
-    <footer class="text-left">
-        Test de pensamiento lógico 
-        Programado por:<br>Carlos Mario Duque Mejía, 
-        Claudia Patricia Ordóñez Enríquez, 
-        Sebastian Lugo Mateus
-     </footer>
+  <div class="form-check">
+    <h3>3. ¿Cómo te sentiste al hacer los ejericicios?</h3>
+    <input class="form-check-input" type="radio" name="radio3" id="radio11">
+    <label class="form-check-label" for="radio11">
+      Muy Mal
+    </label>
+    <input class="form-check-input" type="radio" name="radio3" id="radio12">
+    <label class="form-check-label" for="radio12">
+      Mal
+    </label>
+    <input class="form-check-input" type="radio" name="radio3" id="radio13">
+    <label class="form-check-label" for="radio13">
+      Indiferente
+    </label>
+    <input class="form-check-input" type="radio" name="radio3" id="radio14">
+    <label class="form-check-label" for="radio14">
+      Bien
+    </label>
+    <input class="form-check-input" type="radio" name="radio3" id="radio15">
+    <label class="form-check-label" for="radio15">
+      Muy bien
+    </label>
+  </div>
+
+  <footer class="text-left">
+    Test de pensamiento lógico
+    Programado por:<br>Carlos Mario Duque Mejía,
+    Claudia Patricia Ordóñez Enríquez,
+    Sebastian Lugo Mateus
+  </footer>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +13,7 @@
     <link href="./bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="./bootstrap/bootstrap.min.js"></script>
     <script src="./bootstrap/jquery.min.js"></script>
-    
+
     <!--alerts offline-->
     <script src="./complementos/sweetalert2@11.js"></script>
 
@@ -20,7 +21,7 @@
 
 <body>
     <div id="login">
-        <h1 class="text-center pt-1" style= "color: white;font-family: 'Algerian'">Test de pensamiento computacional</h1>
+        <h1 class="text-center pt-1" style="color: white;font-family: 'Algerian'">Test de pensamiento computacional</h1>
         <br>
         <br>
         <div class="container">
@@ -30,23 +31,23 @@
                         <form id="login-form" class="form" action="" method="post">
                             <h3 class="text-center" style="color: white;">Ingresa tu nombre</h3>
                             <div class="form-group">
-                                <label for="username" style="color: white;" >Nombre de Usuario:</label><br>
+                                <label for="username" style="color: white;">Nombre de Usuario:</label><br>
                                 <input type="text" name="username" id="username" class="form-control">
-                            </div> 
+                            </div>
                             <div id="personajes" class="text-center">
                                 <h4>Selecciona tu personaje</h4><br>
                                 <img src="./images/link.jpg" width="100px" height="100px">
-                                <input class="form-check-input" type="radio" name="radio" id="link" checked> 
+                                <input class="form-check-input" type="radio" name="radio" id="link" checked>
                                 <img src="./images/zelda.jpg" width="100px" height="100px">
                                 <input class="form-check-input" type="radio" name="radio" id="zelda">
                             </div>
                             <br>
                         </form>
-                        <div class="container-fluid h-100"> 
+                        <div class="container-fluid h-100">
                             <div class="align-items-center">
                                 <div class="col text-center">
                                     <button id="start" class="btn btn-primary"> Empezar </button>
-                                </div>	
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -55,13 +56,30 @@
         </div>
     </div>
 
-    <footer class="text-center">
-        Test de pensamiento lógico 
-        Programado por: <br>Carlos Mario Duque Mejía<br>
-        Claudia Patricia Ordóñez Enríquez<br>
-        Sebastian Lugo Mateus
-     </footer>
-    
+    <footer class="text-center py-0">
+        <div class="container">
+            <nav class="row">
+                <ul class="col list-unstyled">
+                    <li style="justify-content: center;align-items: center;text-align: center; margin-top: 5%">
+                        Carlos Mario Duque Mejía<br>Claudia Patricia Ordóñez Enríquez<br>Sebastian Lugo Mateus</li>
+                </ul>
+                <ul class="col list-unstyled"
+                    style="align-content: center;position: relative;align-items: center;justify-content: center">
+                    <li
+                        style="justify-content: center;align-items: center;text-align: center; margin-top: 5%;margin-left: 20%">
+                        Ingeniería de Sistemas<br>Universidad De Quindio<br>2022</li>
+
+                </ul>
+
+                <ul class="col list-unstyled" style="text-align: right">
+                    <li class="font-weight-bold"
+                        style="justify-content: center;align-items: center; margin-top:13%;margin-left: 20%"> Test
+                        Pensamiento lógico<br>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
     <script src="./scripts/index.js"></script>
 </body>
 

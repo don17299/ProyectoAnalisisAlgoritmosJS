@@ -1,99 +1,106 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     width: 100%;
     height: 100vh;
     display: grid;
     place-items: center;
     background-image: url("../images/background.png");
-    background-position-x:center;
-    background-position-y:center;
+    background-position-x: center;
+    background-position-y: center;
     background-size: cover;
 }
 
-.tablero{
+.tablero {
     width: 500px;
     height: 500px;
     display: grid;
-    grid-template-columns: repeat(6,1fr);
-    grid-template-rows: repeat(6,1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     background-color: white;
-    border:dotted thin black;
+    border: dotted thin black;
 }
 
-.tablero *{
-    transition:  0.5s ease-in-out;
+.tablero * {
+    transition: 0.5s ease-in-out;
     border: black thin solid;
 }
 
-.grass1{
-    padding:13px;
-    background-repeat:no-repeat;
-    background-image:url("../images/cesped-1.jpg");
-    background-size: cover; 
-}
-
-.link{
-    padding:13px;
-    background-repeat:no-repeat;
-    background-image:url("../images/link.jpg");
+.grass1 {
+    padding: 13px;
+    background-repeat: no-repeat;
+    background-image: url("../images/cesped-1.jpg");
     background-size: cover;
 }
 
-.zelda{
-    padding:13px;
-    background-repeat:no-repeat;
-    background-image:url("../images/zelda.jpg");
+.link {
+    padding: 13px;
+    background-repeat: no-repeat;
+    background-image: url("../images/link.jpg");
     background-size: cover;
 }
 
-.chest{
-    padding:13px;
-    background-repeat:no-repeat;
-    background-image:url("../images/cofre.jpg");
-    background-size: cover;
-}
-.wall{
-    padding:13px;
-    background-repeat:no-repeat;
-    background-image:url("../images/muro.jpg");
+.zelda {
+    padding: 13px;
+    background-repeat: no-repeat;
+    background-image: url("../images/zelda.jpg");
     background-size: cover;
 }
 
-.arrowUp{
-    padding:13px;
-    background-repeat:no-repeat;
-    background-image:url("../images/camino-up.jpg");
-    background-size: cover; 
-}
-.arrowLeft{ 
-    padding:13px;
-    background-repeat:no-repeat;
-    background-image:url("../images/camino-left.jpg");
-    background-size: cover; 
-}
-.arrowRight{
-    padding:13px;
-    background-repeat:no-repeat;
-    background-image:url("../images/camino-right.jpg");
-    background-size: cover; 
-}
-.arrowDown{
-    padding:13px;
-    background-repeat:no-repeat;
-    background-image:url("../images/camino-down.jpg"); 
-    background-size: cover; 
+.chest {
+    padding: 13px;
+    background-repeat: no-repeat;
+    background-image: url("../images/cofre.jpg");
+    background-size: cover;
 }
 
-div{
+.wall {
+    padding: 13px;
+    background-repeat: no-repeat;
+    background-image: url("../images/muro.jpg");
+    background-size: cover;
+}
+
+.arrowUp {
+    padding: 13px;
+    background-repeat: no-repeat;
+    background-image: url("../images/camino-up.jpg");
+    background-size: cover;
+}
+
+.arrowLeft {
+    padding: 13px;
+    background-repeat: no-repeat;
+    background-image: url("../images/camino-left.jpg");
+    background-size: cover;
+}
+
+.arrowRight {
+    padding: 13px;
+    background-repeat: no-repeat;
+    background-image: url("../images/camino-right.jpg");
+    background-size: cover;
+}
+
+.arrowDown {
+    padding: 13px;
+    background-repeat: no-repeat;
+    background-image: url("../images/camino-down.jpg");
+    background-size: cover;
+}
+
+div {
     float: left;
 }
 
-#up,#left,#right,#down{
+#up,
+#left,
+#right,
+#down {
     width: 60px;
     height: auto;
     margin: 10px;
@@ -106,14 +113,14 @@ div{
     margin: center;
 }
 
-p{
+p {
     font-family: "Myriad Pro", "sans-serif";
     font-size: 30pt;
     color: white;
     float: left;
 }
 
-#move_set{
+#move_set {
     width: 300px;
     height: 80px;
     display: flex;
@@ -122,8 +129,19 @@ p{
     margin-left: 15px;
 }
 
-#back{
+#back {
     background-color: transparent;
     border: transparent;
     outline: none;
+}
+
+footer {
+    box-sizing: border-box;
+    top: auto;
+    background-color: rgb(89, 109, 98);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    opacity: 0.7;
 }
