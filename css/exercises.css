@@ -40,9 +40,17 @@ body{
 .link{
     padding:13px;
     background-repeat:no-repeat;
-    background-image:url("../images/link.jpg");
+    background-image:url("../images/zelda.jpg");
     background-size: cover;
 }
+
+.zelda{
+    padding:13px;
+    background-repeat:no-repeat;
+    background-image:url("../images/zelda.jpg");
+    background-size: cover;
+}
+
 .chest{
     padding:13px;
     background-repeat:no-repeat;
