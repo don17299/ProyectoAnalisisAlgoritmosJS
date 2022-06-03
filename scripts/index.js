@@ -34,7 +34,11 @@ document.getElementById("start").onclick=function (){
            if(document.getElementById("link").checked){
              personaje="link"
            }else{
+             if(document.getElementById("zelda").checked){
              personaje="zelda"
+             }else{
+               personaje="link"
+             }
            }
             sessionStorage.setItem("personaje",personaje)
             sessionStorage.setItem("username",username)
