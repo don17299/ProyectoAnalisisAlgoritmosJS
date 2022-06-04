@@ -5,12 +5,28 @@
  *  Sebastian Lugo Mateus
  */
 
-if(sessionStorage.getItem("username")===null){
-    location.href="index.html"
+if (sessionStorage.getItem("username") === null) {
+    location.href = "index.html"
 }
 
 
-let personaje=sessionStorage.getItem("personaje")
+let personaje = sessionStorage.getItem("personaje")
+
+if (personaje == "link") {
+    Swal.fire({
+        title: 'Encuentra un camino para que link pueda llegar al cofre',
+        html: '<img src="./images/tuto1-link.png" style="display:inline-block;width:45%"></img><img src="./images/cruceta-right.png" style="display:inline-block;width:10%"></img><img src="./images/tuto2-link.png" style="display:inline-block;width:45%"></img>',
+        width: '100%',
+    })
+}else{
+    Swal.fire({
+        title: 'Encuentra un camino para que zelda pueda llegar al cofre',
+        html: '<img src="./images/tuto1-zelda.png" style="display:inline-block;width:45%"></img><img src="./images/cruceta-right.png" style="display:inline-block;width:10%"></img><img src="./images/tuto2-zelda.png" style="display:inline-block;width:45%"></img>',
+        width: '100%',
+    })
+}
+
+
 
 //sessionStorage.removeItem("personaje")
 
@@ -72,7 +88,7 @@ function fill_matrix_another_time() {
     const board = document.getElementById("board");
 
     if (num_ejercicio === 2) {
-        title.textContent="Prueba #2"
+        title.textContent = "Prueba #2"
         let tam = board.children.length
         let i = 0
         while (i < tam) {
@@ -91,7 +107,7 @@ function fill_matrix_another_time() {
         fill_matrix(ejercicio)
     } else {
         if (num_ejercicio === 3) {
-            title.textContent="Prueba #3"
+            title.textContent = "Prueba #3"
             let tam = board.children.length
             let i = 0
             while (i < tam) {
@@ -109,7 +125,7 @@ function fill_matrix_another_time() {
             fill_matrix(ejercicio)
         } else {
             if (num_ejercicio === 4) {
-                title.textContent="Prueba #4"
+                title.textContent = "Prueba #4"
                 let tam = board.children.length
                 let i = 0
                 while (i < tam) {
@@ -128,7 +144,7 @@ function fill_matrix_another_time() {
 
             } else {
                 if (num_ejercicio === 5) {
-                    title.textContent="Prueba #5"
+                    title.textContent = "Prueba #5"
                     let tam = board.children.length
                     let i = 0
                     while (i < tam) {
@@ -223,7 +239,7 @@ async function check_path(path) {
     let alive = true
     let crash = false
     let overflowed = false
-    let endPos="n.a"
+    let endPos = "n.a"
     for (let k = 0; k < path.length && alive === true; k++) {
         if (path[k].textContent === '↑') {
             if ((i - 1) != -1) {
@@ -332,7 +348,7 @@ async function check_path(path) {
             Swal.fire({
                 title: 'Genial!',
                 text: 'Ahora eres rico',
-                icon: 'info',
+                icon: 'success',
                 confirmButtonText: 'Ok'
             });
             return true
@@ -355,12 +371,12 @@ document.getElementById("answer").onclick = async function () {
     if (myself.textContent === "Responder") {
         const movements = document.getElementById("move_set")
         const moves = movements.children
-        let correct= await check_path(moves)
+        let correct = await check_path(moves)
         if (correct) {
             ejercicios_correctos++
         }
         num_ejercicio++
-        myself.className="btn btn-primary"
+        myself.className = "btn btn-primary"
         if (num_ejercicio <= 5) {
             myself.textContent = "Siguiente"
         } else {
@@ -375,7 +391,7 @@ document.getElementById("answer").onclick = async function () {
                 movements.removeChild(movements.children[0]);
                 i++
             }
-            myself.className="btn btn-light"
+            myself.className = "btn btn-light"
             myself.textContent = "Responder"
             fill_matrix_another_time()
         } else {
