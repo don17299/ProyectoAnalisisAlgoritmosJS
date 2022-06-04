@@ -9,7 +9,10 @@ if(sessionStorage.getItem("username")===null){
     location.href="index.html"
 }
 
+
 let personaje=sessionStorage.getItem("personaje")
+
+//sessionStorage.removeItem("personaje")
 
 /**
  * 0:cesped
@@ -65,8 +68,11 @@ function fill_matrix(matrix) {
 }
 
 function fill_matrix_another_time() {
+    const title = document.getElementById("title");
+    const board = document.getElementById("board");
+
     if (num_ejercicio === 2) {
-        const board = document.getElementById("board");
+        title.textContent="Prueba #2"
         let tam = board.children.length
         let i = 0
         while (i < tam) {
@@ -85,7 +91,7 @@ function fill_matrix_another_time() {
         fill_matrix(ejercicio)
     } else {
         if (num_ejercicio === 3) {
-            const board = document.getElementById("board");
+            title.textContent="Prueba #3"
             let tam = board.children.length
             let i = 0
             while (i < tam) {
@@ -103,7 +109,7 @@ function fill_matrix_another_time() {
             fill_matrix(ejercicio)
         } else {
             if (num_ejercicio === 4) {
-                const board = document.getElementById("board");
+                title.textContent="Prueba #4"
                 let tam = board.children.length
                 let i = 0
                 while (i < tam) {
@@ -122,7 +128,7 @@ function fill_matrix_another_time() {
 
             } else {
                 if (num_ejercicio === 5) {
-                    const board = document.getElementById("board");
+                    title.textContent="Prueba #5"
                     let tam = board.children.length
                     let i = 0
                     while (i < tam) {
@@ -217,7 +223,7 @@ async function check_path(path) {
     let alive = true
     let crash = false
     let overflowed = false
-    let endPos
+    let endPos="n.a"
     for (let k = 0; k < path.length && alive === true; k++) {
         if (path[k].textContent === '↑') {
             if ((i - 1) != -1) {
@@ -264,7 +270,6 @@ async function check_path(path) {
         if (path[k].textContent === '→') {
             if ((j + 1) != 6) {
                 if (document.getElementById(i + "" + (j + 1)).className != "wall") {
-                    console.log(i, j)
                     document.getElementById(i + "" + j).className = "arrowRight"
                     await sleep(700);
                     j++
@@ -345,15 +350,17 @@ async function check_path(path) {
 
 }
 
-document.getElementById("answer").onclick = function () {
+document.getElementById("answer").onclick = async function () {
     const myself = document.getElementById("answer")
     if (myself.textContent === "Responder") {
         const movements = document.getElementById("move_set")
         const moves = movements.children
-        if (check_path(moves)) {
+        let correct= await check_path(moves)
+        if (correct) {
             ejercicios_correctos++
         }
         num_ejercicio++
+        myself.className="btn btn-primary"
         if (num_ejercicio <= 5) {
             myself.textContent = "Siguiente"
         } else {
@@ -368,10 +375,11 @@ document.getElementById("answer").onclick = function () {
                 movements.removeChild(movements.children[0]);
                 i++
             }
+            myself.className="btn btn-light"
             myself.textContent = "Responder"
             fill_matrix_another_time()
         } else {
-            sessionStorage.setItem("num_correct", "" + ejercicios_correctos)
+            sessionStorage.setItem("correct_tests", "" + ejercicios_correctos)
             location.href = "survey.html"
         }
     }
