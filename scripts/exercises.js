@@ -5,7 +5,7 @@
  *  Sebastian Lugo Mateus
  */
 
-if (sessionStorage.getItem("username") === null) {
+if (sessionStorage.getItem("userid") === null) {
     location.href = "index.html"
 }
 

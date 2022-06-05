@@ -1,11 +1,12 @@
-/**
+/*
  * Hecho por:
  *  Carlos Mario Duque Mejia
  *  Claudia Patricia Ordoñez
  *  Sebastian Lugo Mateus
  */
+import {getUsers,} from "./firebase.js"
 
-var input = document.getElementById("username");
+var input = document.getElementById("userid");
 let personaje
 
 input.addEventListener("keypress", function(event) {
@@ -18,12 +19,11 @@ input.addEventListener("keypress", function(event) {
     }
   });
 
-document.getElementById("start").onclick=function (){
+document.getElementById("start").onclick= async ()=>{
 
-    let username =input.value
-        //exercises = new test.Exercises()
+    let userid =input.value
         
-        if(username === ''){
+        if(userid === ''){
             Swal.fire({
                 title: 'Error!',
                 text: 'Ingresa un nombre de usuario',
@@ -31,6 +31,27 @@ document.getElementById("start").onclick=function (){
                 confirmButtonText: 'Ok'
             });
          }else{
+
+          document.getElementById("loading").textContent="Cargando..."
+          
+          const querySnapchot= await getUsers()
+          let repetido=false
+
+          await querySnapchot.forEach(doc => {
+            if(doc.data().userid===userid)
+            repetido=true
+          });
+          
+          if(repetido){
+           await Swal.fire({
+              title: 'El usuario ya existe',
+              text: 'Reemplazaremos la información almacenada con tu nuevo intento.',
+              icon: 'info',
+              confirmButtonText: 'Ok'
+          });
+          }
+          document.getElementById("loading").textContent=""
+
            if(document.getElementById("link").checked){
              personaje="link"
            }else{
@@ -41,7 +62,7 @@ document.getElementById("start").onclick=function (){
              }
            }
             sessionStorage.setItem("personaje",personaje)
-            sessionStorage.setItem("username",username)
+            sessionStorage.setItem("userid",userid)
             location.href="exercises.html"
          }
 }

@@ -29,8 +29,8 @@
                         <form id="login-form" class="form" action="" method="post">
                             <h3 class="text-center" style="color: white;">Ingresa tu nombre</h3>
                             <div class="form-group">
-                                <label for="username" style="color: white;">Nombre de Usuario:</label><br>
-                                <input type="text" name="username" id="username" class="form-control">
+                                <label for="userid" style="color: white;">Documento de Identificacion:</label><br>
+                                <input type="number" name="userid" id="userid" class="form-control">
                             </div>
                             <div id="personajes" class="text-center">
                                 <h4>Selecciona tu personaje</h4><br>
@@ -45,6 +45,7 @@
                             <div class="align-items-center">
                                 <div class="col text-center">
                                     <button id="start" class="btn btn-primary"> Empezar </button>
+                                    <p id="loading" style="display:inline-block;"></p>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +79,7 @@
         </div>
     </footer>
 
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" type="module"></script>
 </body>
 
 </html>

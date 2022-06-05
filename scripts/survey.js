@@ -78,9 +78,9 @@ document.getElementById("button_continue").onclick = function () {
         // sessionStorage.setItem("p_survey1",answer1)
         // sessionStorage.setItem("p_survey2",answer2)
         // sessionStorage.setItem("p_survey3",answer3)
-        let username=sessionStorage.getItem("username")
+        let userid=sessionStorage.getItem("userid")
         let correct_tests=sessionStorage.getItem("correct_tests")
-        saveUser(username,correct_tests,answer1,answer2,answer3)
+        saveUser(userid,correct_tests,answer1,answer2,answer3)
         //location.href = "index.html"
     } else {
         Swal.fire({
