@@ -19,8 +19,8 @@ const firebaseConfig = {
 
  const db = getFirestore()
 
- export const saveUser= (userid,correct_tests,p_survey1,p_survey2,p_survey3)=>{
-   addDoc(collection(db,"Users"),{userid,correct_tests,p_survey1,p_survey2,p_survey3}) 
+ export const saveUser= (user)=>{
+   addDoc(collection(db,"Users"),user) 
  }
 
  export const getUsers=()=>getDocs(collection(db, "Users"));

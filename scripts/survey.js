@@ -65,7 +65,7 @@ function checkAnswers() {
 }
 
 
-document.getElementById("button_continue").onclick = function () {
+document.getElementById("button_continue").onclick = async function () {
     checkAnswers()
 
     if (answer1 != 0 && answer2 != 0 && answer3 != 0) {
@@ -75,20 +75,37 @@ document.getElementById("button_continue").onclick = function () {
             icon: 'info',
             confirmButtonText: 'Ok'
         });
-        // sessionStorage.setItem("p_survey1",answer1)
-        // sessionStorage.setItem("p_survey2",answer2)
-        // sessionStorage.setItem("p_survey3",answer3)
+
         let userid=sessionStorage.getItem("userid")
-        let correct_tests=sessionStorage.getItem("correct_tests")
-        saveUser(userid,correct_tests,answer1,answer2,answer3)
-        //location.href = "index.html"
+        let p_test1=sessionStorage.getItem("p_test1")
+        let p_test2=sessionStorage.getItem("p_test2")
+        let p_test3=sessionStorage.getItem("p_test3")
+        let p_test4=sessionStorage.getItem("p_test4")
+        let p_test5=sessionStorage.getItem("p_test5")
+
+        let user={
+            userid:userid,
+            p_test1:p_test1,
+            p_test2:p_test2,
+            p_test3:p_test3,
+            p_test4:p_test4,
+            p_test5:p_test5,
+            p_survey1:answer1,
+            p_survey2:answer2,
+            p_survey3:answer3
+        }
+        
+        saveUser(user)
+        location.href="reports.html"
     } else {
-        Swal.fire({
+        await Swal.fire({
             title: 'Error!',
             text: 'Debes responder a todas las preguntas.',
             icon: 'error',
             confirmButtonText: 'Ok'
         });
+
+        
     }
 }
 

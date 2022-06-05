@@ -45,7 +45,6 @@ let ejercicio1 =
     [1, 0, 2, 0, 0, 2]];
 
 let num_ejercicio = 1
-let ejercicios_correctos = 0
 
 fill_matrix(ejercicio1)
 
@@ -369,14 +368,18 @@ async function check_path(path) {
 document.getElementById("answer").onclick = async function () {
     const myself = document.getElementById("answer")
     if (myself.textContent === "Responder") {
+        myself.disabled=true
         const movements = document.getElementById("move_set")
         const moves = movements.children
         let correct = await check_path(moves)
         if (correct) {
-            ejercicios_correctos++
+            sessionStorage.setItem("p_test"+num_ejercicio, "true")
+        }else{
+            sessionStorage.setItem("p_test"+num_ejercicio, "false")
         }
         num_ejercicio++
         myself.className = "btn btn-primary"
+        myself.disabled=false
         if (num_ejercicio <= 5) {
             myself.textContent = "Siguiente"
         } else {
@@ -395,7 +398,12 @@ document.getElementById("answer").onclick = async function () {
             myself.textContent = "Responder"
             fill_matrix_another_time()
         } else {
-            sessionStorage.setItem("correct_tests", "" + ejercicios_correctos)
+           await Swal.fire({
+                title: 'Resultados finales',
+                html: '<h2>Prueba #1:    '+(sessionStorage.getItem("p_test1")==="true"? "Correcto":"Incorrecto")+'</h2><h2>Prueba #2:    '+(sessionStorage.getItem("p_test2")==="true"? "Correcto":"Incorrecto")+'</h2><h2>Prueba #3:    '+(sessionStorage.getItem("p_test3")==="true"? "Correcto":"Incorrecto")+'</h2><h2>Prueba #4:    '+(sessionStorage.getItem("p_test4")==="true"? "Correcto":"Incorrecto")+'</h2><h2>Prueba #5:    '+(sessionStorage.getItem("p_test5")==="true"? "Correcto":"Incorrecto")+'</h2>',
+                width: '70%',
+            })
+
             location.href = "survey.html"
         }
     }
