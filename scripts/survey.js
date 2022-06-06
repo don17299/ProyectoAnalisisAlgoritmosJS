@@ -69,12 +69,6 @@ document.getElementById("button_continue").onclick = async function () {
     checkAnswers()
 
     if (answer1 != 0 && answer2 != 0 && answer3 != 0) {
-        Swal.fire({
-            title: 'Gracias',
-            text: '',
-            icon: 'info',
-            confirmButtonText: 'Ok'
-        });
 
         let userid=sessionStorage.getItem("userid")
         let p_test1=sessionStorage.getItem("p_test1")
@@ -96,11 +90,21 @@ document.getElementById("button_continue").onclick = async function () {
             p_survey3:answer3
         }
         
+        
         if(edit_id==="n.a"){
-        saveUser(user)
+            saveUser(user)
         }else{
         await updateUser(edit_id,user)
         }
+
+        await Swal.fire({
+            title: 'Gracias',
+            text: '',
+            icon: 'info',
+            confirmButtonText: 'Ok'
+        });
+
+        
         location.href="reports.html"
     } else {
         await Swal.fire({
