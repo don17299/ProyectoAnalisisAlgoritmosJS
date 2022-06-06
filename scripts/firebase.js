@@ -23,9 +23,7 @@ const firebaseConfig = {
   * Metodo que guarda un usuario en firebase
   * @param {*} user 
   */
- export const saveUser= (user)=>{
-   addDoc(collection(db,"Users"),user) 
- }
+ export const saveUser= (user)=>addDoc(collection(db,"Users"),user) 
 
 /**
  * Metodo que retorna un usuario

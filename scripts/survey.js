@@ -92,9 +92,9 @@ document.getElementById("button_continue").onclick = async function () {
         
         
         if(edit_id==="n.a"){
-            saveUser(user)
+           await saveUser(user)
         }else{
-        await updateUser(edit_id,user)
+           await updateUser(edit_id,user)
         }
 
         await Swal.fire({
