@@ -7,7 +7,7 @@
 import {getUsers,} from "./firebase.js"
 
 var input = document.getElementById("userid");
-let personaje
+let personaje = "link"
 
 input.addEventListener("keypress", function(event) {
     // If the user presses the "Enter" key on the keyboard
@@ -36,10 +36,13 @@ document.getElementById("start").onclick= async ()=>{
           
           const querySnapchot= await getUsers()
           let repetido=false
+          let idRepetido="n.a"
 
           await querySnapchot.forEach(doc => {
-            if(doc.data().userid===userid)
+            if(doc.data().userid===userid){
             repetido=true
+            idRepetido=doc.id
+            }
           });
           
           if(repetido){
@@ -49,17 +52,14 @@ document.getElementById("start").onclick= async ()=>{
               icon: 'info',
               confirmButtonText: 'Ok'
           });
+          sessionStorage.setItem("edit_id",idRepetido)
           }
           document.getElementById("loading").textContent=""
 
            if(document.getElementById("link").checked){
              personaje="link"
            }else{
-             if(document.getElementById("zelda").checked){
              personaje="zelda"
-             }else{
-               personaje="link"
-             }
            }
             sessionStorage.setItem("personaje",personaje)
             sessionStorage.setItem("userid",userid)

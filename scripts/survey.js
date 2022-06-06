@@ -1,4 +1,4 @@
-import {saveUser} from "./firebase.js"
+import {saveUser, updateUser} from "./firebase.js"
 
 let answer1 = 0, answer2 = 0, answer3 = 0
 
@@ -82,6 +82,7 @@ document.getElementById("button_continue").onclick = async function () {
         let p_test3=sessionStorage.getItem("p_test3")
         let p_test4=sessionStorage.getItem("p_test4")
         let p_test5=sessionStorage.getItem("p_test5")
+        let edit_id=sessionStorage.getItem("edit_id")
 
         let user={
             userid:userid,
@@ -95,7 +96,11 @@ document.getElementById("button_continue").onclick = async function () {
             p_survey3:answer3
         }
         
+        if(edit_id==="n.a"){
         saveUser(user)
+        }else{
+        await updateUser(edit_id,user)
+        }
         location.href="reports.html"
     } else {
         await Swal.fire({
