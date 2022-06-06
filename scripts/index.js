@@ -52,8 +52,9 @@ document.getElementById("start").onclick= async ()=>{
               icon: 'info',
               confirmButtonText: 'Ok'
           });
-          sessionStorage.setItem("edit_id",idRepetido)
           }
+          sessionStorage.setItem("edit_id",idRepetido)
+          
           document.getElementById("loading").textContent=""
 
            if(document.getElementById("link").checked){
