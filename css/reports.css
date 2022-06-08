@@ -8,11 +8,11 @@ body {
     position: relative;
 }
 
-div{
-    width: 45%;
-    text-align: center;
+#d1,#d2,#d3,#d4,#d5,#users{
+    width: 18%;
+    text-align: left;
     opacity: 0.8;
     background-color: aliceblue;
-    margin-bottom: 70px;
-    margin-top: 70px;
+    margin-top: 50px;
+    display: inline-block;
 }

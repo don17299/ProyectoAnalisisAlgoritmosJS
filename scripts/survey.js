@@ -118,6 +118,13 @@ document.getElementById("button_continue").onclick = async function () {
     }
 }
 
+Swal.fire({
+    title: 'Encuesta de Satisfacción',
+    text: 'Responde del 1 al 5 la siguientes preguntas',
+    icon: 'info',
+    confirmButtonText: 'Ok'
+});
+
 
 
 
