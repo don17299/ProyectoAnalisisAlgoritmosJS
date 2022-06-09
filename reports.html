@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados</title>
+    <link rel="icon" type="image/png" href="./images/navi_icon.png">
 </head>
 <!--styles-->
 <link rel="stylesheet" href="./css/reports.css">
@@ -80,7 +81,7 @@
                 <p id="s3_prom"></p>
 
         </div>
-
+        <p id="t1" style="display: none;"></p><p id="t2" style="display: none;"></p><p id="t3" style="display: none;"></p><p id="t4" style="display: none;"></p><p id="t5" style="display: none;"></p>
         <div id="users">
             <h4 id="cant"></h4>
         </div>
@@ -98,13 +99,13 @@
             <h3 style="display: inline-block;">Prueba#4 </h3>
             <input type="radio" name="radiot" id="radiot4"><br>
             <h3 style="display: inline-block;">Prueba#5 </h3>
-            <input type="radio" name="radios" id="radiot5">
+            <input type="radio" name="radiot" id="radiot5">
         </div>
 
         <div id="cc" style="display: inline-block;">
             <p id="message"></p>
             <h2 id="ccTxt"></h2>
-            <button id="ccButton" class="btn btn-primary">Calcular Coeficiente de Correlación</button>
+            <button id="ccButton" class="btn btn-primary" disabled>Calcular Coeficiente de Correlación</button>
         </div>
 
         <div id="surveys" style="display: inline-block;">
@@ -115,9 +116,9 @@
             <h3 style="display: inline-block;">Pregunta #3 de la Encuesta </h3>
             <input type="radio" name="radios" id="radios3">
         </div><br>
-        
+
     </div>
-    
+
     <button id="exit" class="btn btn-primary" style="margin-left: 48%; margin-top: 10%;">Salir</button>
 
     <script src="./scripts/reports.js" type="module"></script>

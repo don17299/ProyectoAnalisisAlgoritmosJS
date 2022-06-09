@@ -22,7 +22,7 @@ function rateUser(user) {
 }
 
 function orderUsers(users) {
-    let aux = 0, mayor = 0
+    let aux = 0
     for (let j = 1; j < users.length; j++) {
         for (let i = 0; i < users.length - 1; i++) {
             if (rateUser(users[i]) < rateUser(users[i + 1])) {
@@ -34,8 +34,6 @@ function orderUsers(users) {
         }
     }
 }
-
-
 
 window.addEventListener("DOMContentLoaded", async () => {
 
@@ -76,6 +74,9 @@ window.addEventListener("DOMContentLoaded", async () => {
         let prom3 = Math.round(((correct3 / list_of_users.length) * 100))
         let prom4 = Math.round(((correct4 / list_of_users.length) * 100))
         let prom5 = Math.round(((correct5 / list_of_users.length) * 100))
+        let promS1 = Math.round(prom_survey1 / list_of_users.length)
+        let promS2 = Math.round(prom_survey1 / list_of_users.length)
+        let promS3 = Math.round(prom_survey1 / list_of_users.length)
 
         document.getElementById("p1_prom").textContent = prom1 > 50 ? "Correcto con " + (prom1) + "%" : prom1 === 50 ? "Correcto/Incorrecto con un 50%" : "Incorrecto con un " + (100 - (prom1)) + "%"
         document.getElementById("p2_prom").textContent = prom2 > 50 ? "Correcto con " + (prom2) + "%" : prom2 === 50 ? "Correcto/Incorrecto con un 50%" : "Incorrecto con un " + (100 - (prom2)) + "%"
@@ -94,9 +95,16 @@ window.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("p5_rc").textContent = correct5
         document.getElementById("p5_ri").textContent = (list_of_users.length - correct5)
 
-        document.getElementById("s1_prom").textContent= Math.round(prom_survey1/list_of_users.length)
-        document.getElementById("s2_prom").textContent= Math.round(prom_survey2/list_of_users.length)
-        document.getElementById("s3_prom").textContent= Math.round(prom_survey3/list_of_users.length)
+        document.getElementById("s1_prom").textContent = promS1
+        document.getElementById("s2_prom").textContent = promS2
+        document.getElementById("s3_prom").textContent = promS3
+
+        document.getElementById("t1").textContent = prom1
+        document.getElementById("t2").textContent = prom2
+        document.getElementById("t3").textContent = prom3
+        document.getElementById("t4").textContent = prom4
+        document.getElementById("t5").textContent = prom5
+
 
         orderUsers(list_of_users)
 
@@ -117,6 +125,8 @@ window.addEventListener("DOMContentLoaded", async () => {
             lista.appendChild(element2)
 
         }
+
+        document.getElementById("ccButton").disabled=false
 
     } else {
         Swal.fire({
@@ -164,48 +174,95 @@ function checkAnswers() {
     }
 }
 
+let list_of_users_global=[]
 
-// document.getElementById("ccButton").onclick = () => {
-//     checkAnswers()
-//     let xi=0, xprom=0
-    
-//     if (prueba != 0 && encuesta != 0) {
-//         const querySnapchot = await getUsers()
+document.getElementById("ccButton").onclick = async () => {
+    checkAnswers()
+    let xi = 0, xprom = 0, yi = 0, yprom = 0, cc=0
+    let coeficienteNumerador = 0, coeficienteDenominadorX = 0, coeficienteDenominadorY = 0
 
-//         await querySnapchot.forEach(doc => {
-//             if (doc.data().p_test+""+prueba === "true") {
-//                 correct1++
-//             }
-//             if (doc.data().p_test2 === "true") {
-//                 correct2++
-//             }
-//             if (doc.data().p_test3 === "true") {
-//                 correct3++
-//             }
-//             if (doc.data().p_test4 === "true") {
-//                 correct4++
-//             }
-//             if (doc.data().p_test5 === "true") {
-//                 correct5++
-//             }
+    if (prueba != 0 && encuesta != 0) {
 
-//             prom_survey1 += Number(doc.data().p_survey1)
-//             prom_survey2 += Number(doc.data().p_survey2)
-//             prom_survey3 += Number(doc.data().p_survey3)
+        const querySnapchot = await getUsers()
 
-//             list_of_users.push(doc.data())
-//         });
-//     } else {
-//         Swal.fire({
-//             title: 'Error!',
-//             text: 'Debes responder a todas las preguntas.',
-//             icon: 'error',
-//             confirmButtonText: 'Ok'
-//         });
-//     }
+    await querySnapchot.forEach(doc => {
+        list_of_users_global.push(doc.data())
+    });
+
+        switch (prueba) {
+            case 1: xprom = Number(document.getElementById("t1").textContent) > 50 ? 1 : 0
+                break
+            case 2: xprom = Number(document.getElementById("t2").textContent) > 50 ? 1 : 0
+                break
+            case 3: xprom = Number(document.getElementById("t3").textContent) > 50 ? 1 : 0
+                break
+            case 4: xprom = Number(document.getElementById("t4").textContent) > 50 ? 1 : 0
+                break
+            case 5: xprom = Number(document.getElementById("t5").textContent) > 50 ? 1 : 0
+        }
+        switch (encuesta) {
+            case 1: yprom = Number(document.getElementById("s1_prom").textContent)
+                break
+            case 2: yprom = Number(document.getElementById("s2_prom").textContent)
+                break
+            case 3: yprom = Number(document.getElementById("s3_prom").textContent)
+                break
+        }
+
+        for (let i = 0; i < list_of_users_global.length; i++) {
+            switch (prueba) {
+                case 1: xi = list_of_users_global[i].p_test1 === "true" ? 1 : 0
+                    break
+                case 2: xi = list_of_users_global[i].p_test2 === "true" ? 1 : 0
+                    break
+                case 3: xi = list_of_users_global[i].p_test3 === "true" ? 1 : 0
+                    break
+                case 4: xi = list_of_users_global[i].p_test4 === "true" ? 1 : 0
+                    break
+                case 5: xi = list_of_users_global[i].p_test5 === "true" ? 1 : 0
+            }
+            switch (encuesta) {
+                case 1: yi = list_of_users_global[i].p_survey1
+                    break
+                case 2: yi = list_of_users_global[i].p_survey2
+                    break
+                case 3: yi = list_of_users_global[i].p_survey3
+                    break
+            }
+
+            coeficienteNumerador += (xi - xprom) * (yi - yprom)
+            coeficienteDenominadorX += (xi - xprom)**2
+            coeficienteDenominadorY +=  (yi - yprom)**2
+
+        }
+
+        cc= coeficienteNumerador/(coeficienteDenominadorX*coeficienteDenominadorY)**(1/2)
+
+        if(isNaN(cc)){
+            cc=0
+        }else{
+            if(cc===0){
+                document.getElementById("message").textContent="no tienen  correlación"
+            }else{
+                if(cc<0){
+                    document.getElementById("message").textContent="Correlacion Indirectamente proporcional"
+                }else{
+                    document.getElementById("message").textContent="Correlacion Directamente proporcional"
+                }
+            }
+        }
+        document.getElementById("ccTxt").textContent= cc.toFixed(3)
+    } else {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Debes seleccionar los elementos a calcular.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+    }
 
 
-// }
+}
 
 document.getElementById("exit").onclick = () => {
 
@@ -219,8 +276,8 @@ document.getElementById("exit").onclick = () => {
     sessionStorage.removeItem("edit_id")
     sessionStorage.removeItem("edit_id")
 
-    location.href="index.html"
-    
+    location.href = "index.html"
+
 
 
 }
