@@ -37,13 +37,12 @@ if (personaje == "link") {
  * Se genera el primer ejercicio.
  */
 let ejercicio1 =
-    [[0, 0, 2, 0, 0, 3],
-    [0, 0, 2, 0, 2, 0],
-    [0, 0, 0, 0, 0, 0],
+    [[0, 0, 2, 2, 2, 3],
+    [0, 0, 2, 2, 2, 2],
+    [0, 0, 0, 0, 0, 2],
     [2, 0, 2, 0, 0, 0],
     [0, 0, 0, 0, 0, 0],
     [1, 0, 2, 0, 0, 2]];
-
 let num_ejercicio = 1
 
 fill_matrix(ejercicio1)
