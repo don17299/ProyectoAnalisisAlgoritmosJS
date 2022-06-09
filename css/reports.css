@@ -8,11 +8,35 @@ body {
     position: relative;
 }
 
-#d1,#d2,#d3,#d4,#d5,#users{
-    width: 18%;
+#d1,#d2,#d3,#d4,#d5,#users,#tests,#cc,#surveys,#survey1,#survey2,#survey3{
+    width: 19%;
+    height: 200px;
     text-align: left;
     opacity: 0.8;
     background-color: aliceblue;
     margin-top: 50px;
     display: inline-block;
+    border: solid thin black;
+    text-align: center;
+}
+
+#users{
+    width: 60%;
+    margin-left: 20%;
+    overflow-x: auto;
+}
+
+p{
+    display: inline-block;
+}
+h6{
+    display: inline-block;
+    margin-left: 50px;
+}
+
+
+#tests,#cc,#surveys{
+    width: 30%;
+    height: auto;
+    float: left;
 }

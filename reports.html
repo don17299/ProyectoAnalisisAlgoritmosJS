@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,47 +19,108 @@
 <script src="./complementos/sweetalert2@11.js"></script>
 
 <body>
+
+    <div>
+        <h3 style="background-color: white; width: auto; opacity: 0.8; text-align: center;">Reportes Del Test</h3>
         <div id="d1">
             <h4>Prueba#1</h1>
-                Promedio:   <p id="p1_prom"></p><br>
-                # de respuestas correctas:   <p id="p1_rc"></p><br>
-                # de respuestas incorrectas:   <p id="p1_ri"></p><br>
-            
+                Promedio: <br>
+                <p id="p1_prom"></p><br>
+                # de respuestas correctas: <p id="p1_rc"></p><br>
+                # de respuestas incorrectas: <p id="p1_ri"></p><br>
+
         </div>
         <div id="d2">
             <h4>Prueba#2</h1>
-                Promedio:   <p id="p2_prom"></p><br>
-                # de respuestas correctas:   <p id="p2_rc"></p><br>
-                # de respuestas incorrectas:   <p id="p2_ri"></p><br>
-            
+                Promedio: <br>
+                <p id="p2_prom"></p><br>
+                # de respuestas correctas: <p id="p2_rc"></p><br>
+                # de respuestas incorrectas: <p id="p2_ri"></p><br>
+
         </div>
         <div id="d3">
             <h4>Prueba#3</h1>
-                Promedio:   <p id="p3_prom"></p><br>
-                # de respuestas correctas:   <p id="p3_rc"></p><br>
-                # de respuestas incorrectas:   <p id="p3_ri"></p><br>
-            
+                Promedio: <br>
+                <p id="p3_prom"></p><br>
+                # de respuestas correctas: <p id="p3_rc"></p><br>
+                # de respuestas incorrectas: <p id="p3_ri"></p><br>
+
         </div>
         <div id="d4">
             <h4>Prueba#4</h1>
-                Promedio:   <p id="p4_prom"></p><br>
-                # de respuestas correctas:   <p id="p4_rc"></p><br>
-                # de respuestas incorrectas:   <p id="p4_ri"></p><br>
-            
+                Promedio: <br>
+                <p id="p4_prom"></p><br>
+                # de respuestas correctas: <p id="p4_rc"></p><br>
+                # de respuestas incorrectas: <p id="p4_ri"></p><br>
+
         </div>
         <div id="d5">
             <h4>Prueba#5</h1>
-                Promedio:   <p id="p5_prom"></p><br>
-                # de respuestas correctas:   <p id="p5_rc"></p><br>
-                # de respuestas incorrectas:   <p id="p5_ri"></p><br>
-            
+                Promedio: <br>
+                <p id="p5_prom"></p><br>
+                # de respuestas correctas: <p id="p5_rc"></p><br>
+                # de respuestas incorrectas: <p id="p5_ri"></p><br>
+
+        </div>
+        <div id="survey1">
+            <h4>Pregunta #1 de la Encuesta</h1>
+                Promedio: <br>
+                <p id="s1_prom"></p>
+
+        </div>
+        <div id="survey2">
+            <h4>Pregunta #2 de la Encuesta</h1>
+                Promedio: <br>
+                <p id="s2_prom"></p>
+
+        </div>
+        <div id="survey3">
+            <h4>Pregunta #3 de la Encuesta</h1>
+                Promedio: <br>
+                <p id="s3_prom"></p>
+
         </div>
 
         <div id="users">
-
+            <h4 id="cant"></h4>
         </div>
-    
+        <br>
+    </div>
 
-        <script src="./scripts/reports.js" type="module"></script>
+    <div class="container">
+        <div id="tests" style="display: inline-block;">
+            <h3 style="display: inline-block;">Prueba#1 </h3>
+            <input type="radio" name="radiot" id="radiot1"><br>
+            <h3 style="display: inline-block;">Prueba#2 </h3>
+            <input type="radio" name="radiot" id="radiot2"><br>
+            <h3 style="display: inline-block;">Prueba#3 </h3>
+            <input type="radio" name="radiot" id="radiot3"><br>
+            <h3 style="display: inline-block;">Prueba#4 </h3>
+            <input type="radio" name="radiot" id="radiot4"><br>
+            <h3 style="display: inline-block;">Prueba#5 </h3>
+            <input type="radio" name="radios" id="radiot5">
+        </div>
+
+        <div id="cc" style="display: inline-block;">
+            <p id="message"></p>
+            <h2 id="ccTxt"></h2>
+            <button id="ccButton" class="btn btn-primary">Calcular Coeficiente de Correlación</button>
+        </div>
+
+        <div id="surveys" style="display: inline-block;">
+            <h3 style="display: inline-block;">Pregunta #1 de la Encuesta </h3>
+            <input type="radio" name="radios" id="radios1"><br>
+            <h3 style="display: inline-block;">Pregunta #2 de la Encuesta </h3>
+            <input type="radio" name="radios" id="radios2"><br>
+            <h3 style="display: inline-block;">Pregunta #3 de la Encuesta </h3>
+            <input type="radio" name="radios" id="radios3">
+        </div><br>
+        
+    </div>
+    
+    <button id="exit" class="btn btn-primary" style="margin-left: 48%; margin-top: 10%;">Salir</button>
+
+    <script src="./scripts/reports.js" type="module"></script>
 </body>
+
 </html>
