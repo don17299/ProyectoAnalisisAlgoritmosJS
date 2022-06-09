@@ -25,7 +25,7 @@ if (personaje == "link") {
         html: '<img src="./images/tuto1-link.png" style="display:inline-block;width:45%"></img><img src="./images/cruceta-right.png" style="display:inline-block;width:10%"></img><img src="./images/tuto2-link.png" style="display:inline-block;width:45%"></img><h4>Solo tienes un intento por prueba, Suerte!</h4>',
         width: '100%',
     })
-}else{
+} else {
     Swal.fire({
         title: 'Encuentra un camino para que zelda pueda llegar al cofre',
         html: '<img src="./images/tuto1-zelda.png" style="display:inline-block;width:45%"></img><img src="./images/cruceta-right.png" style="display:inline-block;width:10%"></img><img src="./images/tuto2-zelda.png" style="display:inline-block;width:45%"></img><h4>Solo tienes un intento por prueba, Suerte!</h4>',
@@ -37,12 +37,13 @@ if (personaje == "link") {
  * Se genera el primer ejercicio.
  */
 let ejercicio1 =
-    [[0, 0, 2, 2, 2, 3],
-    [0, 0, 2, 2, 2, 2],
-    [0, 0, 0, 0, 0, 2],
-    [2, 0, 2, 0, 0, 0],
+    [[2, 0, 0, 0, 0, 1],
+    [0, 0, 2, 0, 2, 0],
     [0, 0, 0, 0, 0, 0],
-    [1, 0, 2, 0, 0, 2]];
+    [2, 0, 0, 2, 0, 2],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 2, 0, 0, 3]];
+
 let num_ejercicio = 1
 
 fill_matrix(ejercicio1)
@@ -107,12 +108,13 @@ function fill_matrix_another_time() {
         }
 
         let ejercicio =
-            [[2, 0, 0, 0, 0, 1],
-            [0, 0, 2, 0, 2, 0],
+            [[0, 0, 2, 0, 0, 0],
+            [2, 0, 2, 3, 2, 0],
+            [0, 0, 0, 2, 0, 0],
+            [2, 0, 2, 0, 0, 2],
             [0, 0, 0, 0, 0, 0],
-            [2, 0, 0, 2, 0, 0],
-            [0, 0, 0, 0, 0, 2],
-            [0, 0, 2, 0, 0, 3]];
+            [1, 0, 2, 0, 0, 2]];
+
 
         fill_matrix(ejercicio)
     } else {
@@ -126,9 +128,9 @@ function fill_matrix_another_time() {
             }
 
             let ejercicio =
-                [[0, 0, 0, 0, 0, 2],
-                [0, 2, 2, 2, 0, 0],
-                [0, 0, 2, 3, 0, 0],
+                [[0, 0, 3, 0, 0, 2],
+                [0, 2, 2, 0, 2, 0],
+                [0, 0, 2, 0, 0, 0],
                 [2, 0, 0, 2, 0, 0],
                 [0, 0, 0, 0, 0, 2],
                 [2, 0, 2, 0, 0, 1]];
@@ -144,12 +146,13 @@ function fill_matrix_another_time() {
                     i++
                 }
                 let ejercicio =
-                    [[2, 0, 2, 0, 0, 2],
-                    [0, 0, 0, 0, 0, 0],
-                    [0, 2, 0, 2, 0, 2],
-                    [0, 2, 0, 0, 2, 0],
-                    [0, 0, 2, 0, 0, 0],
-                    [2, 0, 1, 2, 3, 0]];
+                    [[2, 0, 2, 0, 0, 0],
+                    [0, 0, 0, 0, 2, 0],
+                    [3, 2, 0, 2, 2, 0],
+                    [2, 0, 2, 0, 0, 0],
+                    [0, 0, 2, 0, 2, 2],
+                    [2, 0, 0, 0, 0, 1]];
+
 
                 fill_matrix(ejercicio)
 
@@ -163,12 +166,12 @@ function fill_matrix_another_time() {
                         i++
                     }
                     let ejercicio =
-                        [[0, 0, 2, 0, 0, 0],
-                        [0, 0, 0, 2, 0, 2],
-                        [0, 0, 3, 2, 0, 0],
-                        [0, 0, 2, 1, 0, 2],
+                        [[2, 0, 2, 0, 0, 2],
                         [0, 0, 0, 0, 0, 0],
-                        [0, 0, 0, 0, 0, 2]];
+                        [0, 2, 0, 2, 0, 2],
+                        [0, 2, 0, 0, 0, 0],
+                        [0, 0, 2, 2, 0, 2],
+                        [2, 0, 1, 2, 3, 0]];
 
                     fill_matrix(ejercicio)
                 }
@@ -401,18 +404,18 @@ async function check_path(path) {
 document.getElementById("answer").onclick = async function () {
     const myself = document.getElementById("answer")
     if (myself.textContent === "Responder") {
-        myself.disabled=true
+        myself.disabled = true
         const movements = document.getElementById("move_set")
         const moves = movements.children
         let correct = await check_path(moves)
         if (correct) {
-            sessionStorage.setItem("p_test"+num_ejercicio, "true")
-        }else{
-            sessionStorage.setItem("p_test"+num_ejercicio, "false")
+            sessionStorage.setItem("p_test" + num_ejercicio, "true")
+        } else {
+            sessionStorage.setItem("p_test" + num_ejercicio, "false")
         }
         num_ejercicio++
         myself.className = "btn btn-primary"
-        myself.disabled=false
+        myself.disabled = false
         if (num_ejercicio <= 5) {
             myself.textContent = "Siguiente"
         } else {
@@ -431,9 +434,9 @@ document.getElementById("answer").onclick = async function () {
             myself.textContent = "Responder"
             fill_matrix_another_time()
         } else {
-           await Swal.fire({
+            await Swal.fire({
                 title: 'Resultados finales',
-                html: '<h2>Prueba #1:    '+(sessionStorage.getItem("p_test1")==="true"? "Correcto":"Incorrecto")+'</h2><h2>Prueba #2:    '+(sessionStorage.getItem("p_test2")==="true"? "Correcto":"Incorrecto")+'</h2><h2>Prueba #3:    '+(sessionStorage.getItem("p_test3")==="true"? "Correcto":"Incorrecto")+'</h2><h2>Prueba #4:    '+(sessionStorage.getItem("p_test4")==="true"? "Correcto":"Incorrecto")+'</h2><h2>Prueba #5:    '+(sessionStorage.getItem("p_test5")==="true"? "Correcto":"Incorrecto")+'</h2>',
+                html: '<h2>Prueba #1:    ' + (sessionStorage.getItem("p_test1") === "true" ? "Correcto" : "Incorrecto") + '</h2><h2>Prueba #2:    ' + (sessionStorage.getItem("p_test2") === "true" ? "Correcto" : "Incorrecto") + '</h2><h2>Prueba #3:    ' + (sessionStorage.getItem("p_test3") === "true" ? "Correcto" : "Incorrecto") + '</h2><h2>Prueba #4:    ' + (sessionStorage.getItem("p_test4") === "true" ? "Correcto" : "Incorrecto") + '</h2><h2>Prueba #5:    ' + (sessionStorage.getItem("p_test5") === "true" ? "Correcto" : "Incorrecto") + '</h2>',
                 width: '70%',
             })
 
