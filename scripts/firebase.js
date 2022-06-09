@@ -1,3 +1,10 @@
+/*
+ * Hecho por:
+ *  Carlos Mario Duque Mejía
+ *  Claudia Patricia Ordoñez
+ *  Sebastian Lugo Mateus
+ */
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs,onSnapshot,deleteDoc,doc,getDoc, updateDoc} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js"

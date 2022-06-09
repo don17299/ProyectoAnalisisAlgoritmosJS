@@ -1,40 +1,40 @@
 /**
  * Hecho por:
- *  Carlos Mario Duque Mejia
+ *  Carlos Mario Duque Mejía
  *  Claudia Patricia Ordoñez
  *  Sebastian Lugo Mateus
  */
 
+/** 
+ * se verifica que todas las variables de sesion necesarias existan
+ */
 if (sessionStorage.getItem("userid") === null) {
     location.href = "index.html"
 }
 
 
+/**
+ * aqui se toma la variable de sesion del personaje para saber si eligieron a link o a zelda.
+ * y se adecua el tutorial y el tablero para el personaje. 
+ */
 let personaje = sessionStorage.getItem("personaje")
 
 if (personaje == "link") {
     Swal.fire({
         title: 'Encuentra un camino para que link pueda llegar al cofre',
-        html: '<img src="./images/tuto1-link.png" style="display:inline-block;width:45%"></img><img src="./images/cruceta-right.png" style="display:inline-block;width:10%"></img><img src="./images/tuto2-link.png" style="display:inline-block;width:45%"></img>',
+        html: '<img src="./images/tuto1-link.png" style="display:inline-block;width:45%"></img><img src="./images/cruceta-right.png" style="display:inline-block;width:10%"></img><img src="./images/tuto2-link.png" style="display:inline-block;width:45%"></img><h4>Solo tienes un intento por prueba, Suerte!</h4>',
         width: '100%',
     })
 }else{
     Swal.fire({
         title: 'Encuentra un camino para que zelda pueda llegar al cofre',
-        html: '<img src="./images/tuto1-zelda.png" style="display:inline-block;width:45%"></img><img src="./images/cruceta-right.png" style="display:inline-block;width:10%"></img><img src="./images/tuto2-zelda.png" style="display:inline-block;width:45%"></img>',
+        html: '<img src="./images/tuto1-zelda.png" style="display:inline-block;width:45%"></img><img src="./images/cruceta-right.png" style="display:inline-block;width:10%"></img><img src="./images/tuto2-zelda.png" style="display:inline-block;width:45%"></img><h4>Solo tienes un intento por prueba, Suerte!</h4>',
         width: '100%',
     })
 }
 
-
-
-//sessionStorage.removeItem("personaje")
-
 /**
- * 0:cesped
- * 1:personaje
- * 2:muro
- * 3:cofre
+ * Se genera el primer ejercicio.
  */
 let ejercicio1 =
     [[0, 0, 2, 0, 0, 3],
@@ -48,6 +48,15 @@ let num_ejercicio = 1
 
 fill_matrix(ejercicio1)
 
+/**
+ * Esta funcion rellena el tablero de juego con la matriz especificada
+ * Este es el arquetipo para generar un ejercicio:
+ * 0:cesped
+ * 1:personaje
+ * 2:muro o arbusto
+ * 3:cofre
+ * @param {*} matrix 
+ */
 function fill_matrix(matrix) {
 
     if (matrix.length === 6) {
@@ -82,6 +91,9 @@ function fill_matrix(matrix) {
     }
 }
 
+/**
+ * Esta funcion se encarga de rellenar el tablero para los siguientes 4 ejercicios.
+ */
 function fill_matrix_another_time() {
     const title = document.getElementById("title");
     const board = document.getElementById("board");
@@ -166,6 +178,9 @@ function fill_matrix_another_time() {
     }
 }
 
+/**
+ * Este evento permite escribir la flecha hacia arriba en el campo de escritura
+ */
 document.getElementById("up").onclick = function () {
     /*
     ↑
@@ -180,6 +195,9 @@ document.getElementById("up").onclick = function () {
     movements.appendChild(move);
 }
 
+/**
+ * Este evento permite escribir la flecha hacia abajo en el campo de escritura
+ */
 document.getElementById("down").onclick = function () {
     /*
      ↑
@@ -194,6 +212,9 @@ document.getElementById("down").onclick = function () {
     movements.appendChild(move);
 }
 
+/**
+ * Este evento permite escribir la flecha hacia la izquierda en el campo de escritura
+ */
 document.getElementById("left").onclick = function () {
     /*
      ↑
@@ -208,6 +229,9 @@ document.getElementById("left").onclick = function () {
     movements.appendChild(move);
 }
 
+/**
+ * Este evento permite escribir la flecha hacia la derecha en el campo de escritura
+ */
 document.getElementById("right").onclick = function () {
     /*
      ↑
@@ -222,14 +246,19 @@ document.getElementById("right").onclick = function () {
     movements.appendChild(move);
 }
 
+/**
+ * esta funcion permite ejecutarse el tiempo en milisegundos que se le pase por parametro, se usa para esperar.
+ * @param {*} ms milisegundos.
+ * @returns 
+ */
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 /**
- * 
+ * Esta funcion revisa si la ruta ingresada por el usuario fue correcta y llego al objetivo.
  * @param {*} path lista de <p> con los movimientos ingresados
- * @returns 
+ * @returns true si llego, false sino.
  */
 async function check_path(path) {
     const link = document.getElementsByClassName(personaje)
@@ -366,6 +395,10 @@ async function check_path(path) {
 
 }
 
+/**
+ * Este evento permite al usuario responder, el boton asociado cambiara automaticamente a siguiente
+ * Teniendo solo un Intento por ejercicio, al finalizar redirecciona a la encuesta.
+ */
 document.getElementById("answer").onclick = async function () {
     const myself = document.getElementById("answer")
     if (myself.textContent === "Responder") {
@@ -410,6 +443,9 @@ document.getElementById("answer").onclick = async function () {
     }
 }
 
+/**
+ * Este boton permite borrar un movimiento de la ruta ingresada.
+ */
 document.getElementById("back").onclick = function () {
     const movements = document.getElementById("move_set")
     if (movements.children.length > 0) {

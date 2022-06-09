@@ -1,6 +1,6 @@
 html,
 body {
-    background-image: url("../images/background.png");
+    background-image: url("../images/background-reports.png");
     background-size: cover;
     background-repeat: repeat;
     background-position: center;
@@ -9,26 +9,13 @@ body {
 }
 
 #login {
-    width: 50%;
-    height: 50%;
-    background-color: transparent;
+    width: 60%;
+    height: 60%;
+    background-color: white;
     background-repeat: no-repeat;
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-}
-
-footer {
-    background-color: rgb(89, 109, 98);
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    opacity: 0.7;
-}
-
-img {
-    margin: auto;
+    color: black;
 }

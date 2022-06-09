@@ -1,7 +1,27 @@
+/*
+ * Hecho por:
+ *  Carlos Mario Duque Mejía
+ *  Claudia Patricia Ordoñez
+ *  Sebastian Lugo Mateus
+ */
+
 import { saveUser, updateUser } from "./firebase.js"
+
+/**
+ * se verifica que todas las variables de sesion necesarias existan
+ */
+if (sessionStorage.getItem("userid") === null || sessionStorage.getItem("edit_id") === null ||
+    sessionStorage.getItem("p_test1") === null || sessionStorage.getItem("p_test2") === null ||
+    sessionStorage.getItem("p_test3") === null || sessionStorage.getItem("p_test4") === null ||
+    sessionStorage.getItem("p_test5") === null) {
+    location.href = "index.html"
+}
 
 let answer1 = 0, answer2 = 0, answer3 = 0
 
+/**
+ * esta funcion permite recoger las respuestas del usuario en los checkboxes.
+ */
 function checkAnswers() {
     if (document.getElementById("radio11").checked) {
         answer1 = 1
@@ -64,61 +84,77 @@ function checkAnswers() {
     }
 }
 
-
+/**
+ * Este evento permite guardar o actualizar al usuario, tambien valida si la informacion esta completa 
+ * o si se habia guardado antes.
+ */
 document.getElementById("button_continue").onclick = async function () {
-    checkAnswers()
 
-    let myself = document.getElementById("button_continue")
-    myself.disabled = true
+    if (sessionStorage.getItem("saved") === null) {
+        checkAnswers()
 
-    if (answer1 != 0 && answer2 != 0 && answer3 != 0) {
+        let myself = document.getElementById("button_continue")
+        myself.disabled = true
 
-        let userid = sessionStorage.getItem("userid")
-        let p_test1 = sessionStorage.getItem("p_test1")
-        let p_test2 = sessionStorage.getItem("p_test2")
-        let p_test3 = sessionStorage.getItem("p_test3")
-        let p_test4 = sessionStorage.getItem("p_test4")
-        let p_test5 = sessionStorage.getItem("p_test5")
-        let edit_id = sessionStorage.getItem("edit_id")
+        if (answer1 != 0 && answer2 != 0 && answer3 != 0) {
 
-        let user = {
-            userid: userid,
-            p_test1: p_test1,
-            p_test2: p_test2,
-            p_test3: p_test3,
-            p_test4: p_test4,
-            p_test5: p_test5,
-            p_survey1: answer1,
-            p_survey2: answer2,
-            p_survey3: answer3
-        }
+            let userid = sessionStorage.getItem("userid")
+            let p_test1 = sessionStorage.getItem("p_test1")
+            let p_test2 = sessionStorage.getItem("p_test2")
+            let p_test3 = sessionStorage.getItem("p_test3")
+            let p_test4 = sessionStorage.getItem("p_test4")
+            let p_test5 = sessionStorage.getItem("p_test5")
+            let edit_id = sessionStorage.getItem("edit_id")
+
+            let user = {
+                userid: userid,
+                p_test1: p_test1,
+                p_test2: p_test2,
+                p_test3: p_test3,
+                p_test4: p_test4,
+                p_test5: p_test5,
+                p_survey1: answer1,
+                p_survey2: answer2,
+                p_survey3: answer3
+            }
 
 
-        if (edit_id === "n.a") {
-            await saveUser(user)
+            if (edit_id === "n.a") {
+                await saveUser(user)
+            } else {
+                await updateUser(edit_id, user)
+            }
+
+            sessionStorage.setItem("saved", "true")
+
+            await Swal.fire({
+                title: 'Gracias',
+                text: '',
+                icon: 'info',
+                confirmButtonText: 'Ok'
+            });
+
+
+            location.href = "reports.html"
         } else {
-            await updateUser(edit_id, user)
+            await Swal.fire({
+                title: 'Error!',
+                text: 'Debes responder a todas las preguntas.',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            });
+            document.getElementById("button_continue").disabled = false
+
+
         }
-
-        await Swal.fire({
-            title: 'Gracias',
-            text: '',
-            icon: 'info',
-            confirmButtonText: 'Ok'
-        });
-
-
-        location.href = "reports.html"
     } else {
         await Swal.fire({
             title: 'Error!',
-            text: 'Debes responder a todas las preguntas.',
+            text: 'El usuario ya se guardo.',
             icon: 'error',
             confirmButtonText: 'Ok'
         });
-        document.getElementById("button_continue").disabled=false
-
-
+        location.href = "reports.html"
     }
 }
 

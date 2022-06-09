@@ -1,5 +1,17 @@
+/*
+ * Hecho por:
+ *  Carlos Mario Duque Mejía
+ *  Claudia Patricia Ordoñez
+ *  Sebastian Lugo Mateus
+ */
+
 import { getUsers, } from "./firebase.js"
 
+/**
+ * Brinda una calificacion a un usuario basado en sus respuestas al text almacenadas en la BD
+ * @param {*} user 
+ * @returns 
+ */
 function rateUser(user) {
     let points = 0
     if (user.p_test1 === "true") {
@@ -35,6 +47,9 @@ function orderUsers(users) {
     }
 }
 
+/**
+ * Evento que se ejecuta al cargar el html, este es el que saca la informacion de Firebase y la pinta.
+ */
 window.addEventListener("DOMContentLoaded", async () => {
 
     let correct1 = 0, correct2 = 0, correct3 = 0, correct4 = 0, correct5 = 0
@@ -140,6 +155,9 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 let prueba = 0, encuesta = 0
 
+/**
+ * Este metodo verifica las respuesta en los checkButtons del cc.
+ */
 function checkAnswers() {
     if (document.getElementById("radiot1").checked) {
         prueba = 1
@@ -176,6 +194,9 @@ function checkAnswers() {
 
 let list_of_users_global=[]
 
+/**
+ * Este evento permite calcular el coeficiente de correlacion con los parametros especificados.
+ */
 document.getElementById("ccButton").onclick = async () => {
     checkAnswers()
     let xi = 0, xprom = 0, yi = 0, yprom = 0, cc=0
@@ -240,6 +261,7 @@ document.getElementById("ccButton").onclick = async () => {
 
         if(isNaN(cc)){
             cc=0
+            document.getElementById("message").textContent="no tienen  correlación"
         }else{
             if(cc===0){
                 document.getElementById("message").textContent="no tienen  correlación"
@@ -264,6 +286,9 @@ document.getElementById("ccButton").onclick = async () => {
 
 }
 
+/**
+ * Este evento permite salir del juego y volver a empezar si asi se desea.
+ */
 document.getElementById("exit").onclick = () => {
 
     sessionStorage.removeItem("userid")
@@ -275,6 +300,7 @@ document.getElementById("exit").onclick = () => {
     sessionStorage.removeItem("p_test5")
     sessionStorage.removeItem("edit_id")
     sessionStorage.removeItem("edit_id")
+    sessionStorage.removeItem("saved")
 
     location.href = "index.html"
 
