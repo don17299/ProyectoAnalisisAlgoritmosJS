@@ -22,7 +22,6 @@ body {
 
 #users{
     width: 60%;
-    margin-left: 20%;
     overflow-x: auto;
 }
 

@@ -21,15 +21,18 @@ input.addEventListener("keypress", function(event) {
 
 document.getElementById("start").onclick= async ()=>{
 
+  let myself=document.getElementById("start")
+  myself.disabled=true
     let userid =input.value
         
         if(userid === ''){
             Swal.fire({
                 title: 'Error!',
-                text: 'Ingresa un nombre de usuario',
+                text: 'Ingresa tu identificación',
                 icon: 'error',
                 confirmButtonText: 'Ok'
             });
+            document.getElementById("start").disabled=false
          }else{
 
           document.getElementById("loading").textContent="Cargando..."

@@ -71,11 +71,11 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     if (list_of_users.length != 0) {
 
-        let prom1 = Math.trunc(((correct1 / list_of_users.length) * 100))
-        let prom2 = Math.trunc(((correct2 / list_of_users.length) * 100))
-        let prom3 = Math.trunc(((correct3 / list_of_users.length) * 100))
-        let prom4 = Math.trunc(((correct4 / list_of_users.length) * 100))
-        let prom5 = Math.trunc(((correct5 / list_of_users.length) * 100))
+        let prom1 = Math.round(((correct1 / list_of_users.length) * 100))
+        let prom2 = Math.round(((correct2 / list_of_users.length) * 100))
+        let prom3 = Math.round(((correct3 / list_of_users.length) * 100))
+        let prom4 = Math.round(((correct4 / list_of_users.length) * 100))
+        let prom5 = Math.round(((correct5 / list_of_users.length) * 100))
 
         document.getElementById("p1_prom").textContent = prom1 > 50 ? "Correcto con " + (prom1) + "%" : prom1 === 50 ? "Correcto/Incorrecto con un 50%" : "Incorrecto con un " + (100 - (prom1)) + "%"
         document.getElementById("p2_prom").textContent = prom2 > 50 ? "Correcto con " + (prom2) + "%" : prom2 === 50 ? "Correcto/Incorrecto con un 50%" : "Incorrecto con un " + (100 - (prom2)) + "%"
@@ -94,9 +94,9 @@ window.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("p5_rc").textContent = correct5
         document.getElementById("p5_ri").textContent = (list_of_users.length - correct5)
 
-        document.getElementById("s1_prom").textContent= Math.trunc(prom_survey1/list_of_users.length)
-        document.getElementById("s2_prom").textContent= Math.trunc(prom_survey2/list_of_users.length)
-        document.getElementById("s3_prom").textContent= Math.trunc(prom_survey3/list_of_users.length)
+        document.getElementById("s1_prom").textContent= Math.round(prom_survey1/list_of_users.length)
+        document.getElementById("s2_prom").textContent= Math.round(prom_survey2/list_of_users.length)
+        document.getElementById("s3_prom").textContent= Math.round(prom_survey3/list_of_users.length)
 
         orderUsers(list_of_users)
 

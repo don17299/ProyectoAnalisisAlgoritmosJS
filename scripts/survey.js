@@ -1,4 +1,4 @@
-import {saveUser, updateUser} from "./firebase.js"
+import { saveUser, updateUser } from "./firebase.js"
 
 let answer1 = 0, answer2 = 0, answer3 = 0
 
@@ -68,33 +68,36 @@ function checkAnswers() {
 document.getElementById("button_continue").onclick = async function () {
     checkAnswers()
 
+    let myself = document.getElementById("button_continue")
+    myself.disabled = true
+
     if (answer1 != 0 && answer2 != 0 && answer3 != 0) {
 
-        let userid=sessionStorage.getItem("userid")
-        let p_test1=sessionStorage.getItem("p_test1")
-        let p_test2=sessionStorage.getItem("p_test2")
-        let p_test3=sessionStorage.getItem("p_test3")
-        let p_test4=sessionStorage.getItem("p_test4")
-        let p_test5=sessionStorage.getItem("p_test5")
-        let edit_id=sessionStorage.getItem("edit_id")
+        let userid = sessionStorage.getItem("userid")
+        let p_test1 = sessionStorage.getItem("p_test1")
+        let p_test2 = sessionStorage.getItem("p_test2")
+        let p_test3 = sessionStorage.getItem("p_test3")
+        let p_test4 = sessionStorage.getItem("p_test4")
+        let p_test5 = sessionStorage.getItem("p_test5")
+        let edit_id = sessionStorage.getItem("edit_id")
 
-        let user={
-            userid:userid,
-            p_test1:p_test1,
-            p_test2:p_test2,
-            p_test3:p_test3,
-            p_test4:p_test4,
-            p_test5:p_test5,
-            p_survey1:answer1,
-            p_survey2:answer2,
-            p_survey3:answer3
+        let user = {
+            userid: userid,
+            p_test1: p_test1,
+            p_test2: p_test2,
+            p_test3: p_test3,
+            p_test4: p_test4,
+            p_test5: p_test5,
+            p_survey1: answer1,
+            p_survey2: answer2,
+            p_survey3: answer3
         }
-        
-        
-        if(edit_id==="n.a"){
-           await saveUser(user)
-        }else{
-           await updateUser(edit_id,user)
+
+
+        if (edit_id === "n.a") {
+            await saveUser(user)
+        } else {
+            await updateUser(edit_id, user)
         }
 
         await Swal.fire({
@@ -104,8 +107,8 @@ document.getElementById("button_continue").onclick = async function () {
             confirmButtonText: 'Ok'
         });
 
-        
-        location.href="reports.html"
+
+        location.href = "reports.html"
     } else {
         await Swal.fire({
             title: 'Error!',
@@ -113,8 +116,9 @@ document.getElementById("button_continue").onclick = async function () {
             icon: 'error',
             confirmButtonText: 'Ok'
         });
+        document.getElementById("button_continue").disabled=false
 
-        
+
     }
 }
 
