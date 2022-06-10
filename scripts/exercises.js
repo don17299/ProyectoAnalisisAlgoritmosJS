@@ -434,6 +434,7 @@ document.getElementById("answer").onclick = async function () {
             myself.textContent = "Responder"
             fill_matrix_another_time()
         } else {
+            myself.disabled = true
             await Swal.fire({
                 title: 'Resultados finales',
                 html: '<h2>Prueba #1:    ' + (sessionStorage.getItem("p_test1") === "true" ? "Correcto" : "Incorrecto") + '</h2><h2>Prueba #2:    ' + (sessionStorage.getItem("p_test2") === "true" ? "Correcto" : "Incorrecto") + '</h2><h2>Prueba #3:    ' + (sessionStorage.getItem("p_test3") === "true" ? "Correcto" : "Incorrecto") + '</h2><h2>Prueba #4:    ' + (sessionStorage.getItem("p_test4") === "true" ? "Correcto" : "Incorrecto") + '</h2><h2>Prueba #5:    ' + (sessionStorage.getItem("p_test5") === "true" ? "Correcto" : "Incorrecto") + '</h2>',
