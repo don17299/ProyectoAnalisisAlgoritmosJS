@@ -90,8 +90,8 @@ window.addEventListener("DOMContentLoaded", async () => {
         let prom4 = Math.round(((correct4 / list_of_users.length) * 100))
         let prom5 = Math.round(((correct5 / list_of_users.length) * 100))
         let promS1 = Math.round(prom_survey1 / list_of_users.length)
-        let promS2 = Math.round(prom_survey1 / list_of_users.length)
-        let promS3 = Math.round(prom_survey1 / list_of_users.length)
+        let promS2 = Math.round(prom_survey2 / list_of_users.length)
+        let promS3 = Math.round(prom_survey3 / list_of_users.length)
 
         document.getElementById("p1_prom").textContent = prom1 > 50 ? "Correcto con " + (prom1) + "%" : prom1 === 50 ? "Correcto/Incorrecto con un 50%" : "Incorrecto con un " + (100 - (prom1)) + "%"
         document.getElementById("p2_prom").textContent = prom2 > 50 ? "Correcto con " + (prom2) + "%" : prom2 === 50 ? "Correcto/Incorrecto con un 50%" : "Incorrecto con un " + (100 - (prom2)) + "%"
