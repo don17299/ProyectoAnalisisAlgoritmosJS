@@ -275,7 +275,11 @@ async function check_path(path) {
         if (path[k].textContent === '↑') {
             if ((i - 1) != -1) {
                 if (document.getElementById((i - 1) + "" + j).className != "wall") {
-                    document.getElementById(i + "" + j).className = "arrowUp"
+                    if (endPos != "chest") {
+                        document.getElementById(i + "" + j).className = "arrowUp"
+                    } else {
+                        document.getElementById(i + "" + j).className = "chest"
+                    }
                     await sleep(700);
                     i--
                     endPos = document.getElementById(i + "" + j).className
@@ -296,7 +300,11 @@ async function check_path(path) {
         if (path[k].textContent === '←') {
             if ((j - 1) != -1) {
                 if (document.getElementById(i + "" + (j - 1)).className != "wall") {
-                    document.getElementById(i + "" + j).className = "arrowLeft"
+                    if (endPos != "chest") {
+                        document.getElementById(i + "" + j).className = "arrowLeft"
+                    } else {
+                        document.getElementById(i + "" + j).className = "chest"
+                    }
                     await sleep(700);
                     j--
                     endPos = document.getElementById(i + "" + j).className
@@ -317,7 +325,11 @@ async function check_path(path) {
         if (path[k].textContent === '→') {
             if ((j + 1) != 6) {
                 if (document.getElementById(i + "" + (j + 1)).className != "wall") {
-                    document.getElementById(i + "" + j).className = "arrowRight"
+                    if (endPos != "chest") {
+                        document.getElementById(i + "" + j).className = "arrowRight"
+                    } else {
+                        document.getElementById(i + "" + j).className = "chest"
+                    }
                     await sleep(700);
                     j++
                     endPos = document.getElementById(i + "" + j).className
@@ -338,7 +350,11 @@ async function check_path(path) {
         if (path[k].textContent === '↓') {
             if ((i + 1) != 6) {
                 if (document.getElementById((i + 1) + "" + j).className != "wall") {
-                    document.getElementById(i + "" + j).className = "arrowDown"
+                    if (endPos != "chest") {
+                        document.getElementById(i + "" + j).className = "arrowDown"
+                    } else {
+                        document.getElementById(i + "" + j).className = "chest"
+                    }
                     await sleep(700);
                     i++
                     endPos = document.getElementById(i + "" + j).className
