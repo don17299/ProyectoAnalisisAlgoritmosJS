@@ -133,7 +133,7 @@ window.addEventListener("DOMContentLoaded", async () => {
             const element1 = document.createElement("p")
             const element2 = document.createElement("h6")
 
-            element1.innerText = "#" + (i + 1) + " identificación: " + list_of_users[i].userid
+            element1.innerText = "N°" + (i + 1) + "  identificación: " + list_of_users[i].userid
             element2.innerText = "calificación: " + rateUser(list_of_users[i])
 
             lista.appendChild(element1)
@@ -196,6 +196,7 @@ let list_of_users_global = []
 
 /**
  * Este evento permite calcular el coeficiente de correlacion con los parametros especificados.
+ * las variables t guardan el porcentaje promedio de las respuestas correctas
  */
 document.getElementById("ccButton").onclick = async () => {
     checkAnswers()

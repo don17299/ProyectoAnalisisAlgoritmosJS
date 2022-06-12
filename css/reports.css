@@ -36,6 +36,8 @@ h6{
 
 #tests,#cc,#surveys{
     width: 30%;
-    height: auto;
+    height: 350px;
     float: left;
+    text-align: center;
+    padding: 20px;
 }
