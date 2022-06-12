@@ -141,7 +141,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
         }
 
-        document.getElementById("ccButton").disabled=false
+        document.getElementById("ccButton").disabled = false
 
     } else {
         Swal.fire({
@@ -192,23 +192,23 @@ function checkAnswers() {
     }
 }
 
-let list_of_users_global=[]
+let list_of_users_global = []
 
 /**
  * Este evento permite calcular el coeficiente de correlacion con los parametros especificados.
  */
 document.getElementById("ccButton").onclick = async () => {
     checkAnswers()
-    let xi = 0, xprom = 0, yi = 0, yprom = 0, cc=0
+    let xi = 0, xprom = 0, yi = 0, yprom = 0, cc = 0
     let coeficienteNumerador = 0, coeficienteDenominadorX = 0, coeficienteDenominadorY = 0
 
     if (prueba != 0 && encuesta != 0) {
 
         const querySnapchot = await getUsers()
 
-    await querySnapchot.forEach(doc => {
-        list_of_users_global.push(doc.data())
-    });
+        await querySnapchot.forEach(doc => {
+            list_of_users_global.push(doc.data())
+        });
 
         switch (prueba) {
             case 1: xprom = Number(document.getElementById("t1").textContent) > 50 ? 1 : 0
@@ -252,28 +252,28 @@ document.getElementById("ccButton").onclick = async () => {
             }
 
             coeficienteNumerador += (xi - xprom) * (yi - yprom)
-            coeficienteDenominadorX += (xi - xprom)**2
-            coeficienteDenominadorY +=  (yi - yprom)**2
+            coeficienteDenominadorX += (xi - xprom) ** 2
+            coeficienteDenominadorY += (yi - yprom) ** 2
 
         }
 
-        cc= coeficienteNumerador/(coeficienteDenominadorX*coeficienteDenominadorY)**(1/2)
+        cc = coeficienteNumerador / (coeficienteDenominadorX * coeficienteDenominadorY) ** (1 / 2)
 
-        if(isNaN(cc)){
-            cc=0
-            document.getElementById("message").textContent="no tienen  correlación"
-        }else{
-            if(cc===0){
-                document.getElementById("message").textContent="no tienen  correlación"
-            }else{
-                if(cc<0){
-                    document.getElementById("message").textContent="Correlacion Indirectamente proporcional"
-                }else{
-                    document.getElementById("message").textContent="Correlacion Directamente proporcional"
+        if (isNaN(cc)) {
+            cc = 0
+            document.getElementById("message").textContent = "no tienen  correlación"
+        } else {
+            if (cc === 0) {
+                document.getElementById("message").textContent = "no tienen  correlación"
+            } else {
+                if (cc < 0) {
+                    document.getElementById("message").textContent = "Correlacion Indirectamente proporcional"
+                } else {
+                    document.getElementById("message").textContent = "Correlacion Directamente proporcional"
                 }
             }
         }
-        document.getElementById("ccTxt").textContent= cc.toFixed(3)
+        document.getElementById("ccTxt").textContent = cc.toFixed(3)
     } else {
         Swal.fire({
             title: 'Error!',

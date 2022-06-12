@@ -9,6 +9,6 @@
 /**
  * este script redirecciona al inicio de sesion.
  */
-document.getElementById("start").onclick=()=>{
-    location.href="inicio.html"
+document.getElementById("start").onclick = () => {
+    location.href = "inicio.html"
 }

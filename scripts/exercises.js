@@ -260,7 +260,7 @@ function sleep(ms) {
 /**
  * Esta funcion revisa si la ruta ingresada por el usuario fue correcta y llego al objetivo.
  * @param {*} path lista de <p> con los movimientos ingresados
- * @returns true si llego, false sino.
+ * @returns true si llego, false sino. 
  */
 async function check_path(path) {
     const link = document.getElementsByClassName(personaje)
