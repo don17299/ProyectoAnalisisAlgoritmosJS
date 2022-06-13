@@ -23,7 +23,7 @@ body {
 footer {
     background-color: rgb(89, 109, 98);
     position: absolute;
-    bottom: 0;
+    bottom: -5%;
     width: 100%;
     color: white;
     opacity: 0.7;
