@@ -300,7 +300,6 @@ document.getElementById("exit").onclick = () => {
     sessionStorage.removeItem("p_test4")
     sessionStorage.removeItem("p_test5")
     sessionStorage.removeItem("edit_id")
-    sessionStorage.removeItem("edit_id")
     sessionStorage.removeItem("saved")
 
     location.href = "index.html"
